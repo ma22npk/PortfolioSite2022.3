@@ -1,0 +1,914 @@
+@charset "UTF-8";
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
+@font-face {
+  font-family: garamond;
+  src: url("garamond.ttf");
+}
+
+/* Lv.1 ATOMS =========================
+/* 全体の共通で使う値を設定。
+配色・フォントといった定義、
+ラベルボタンにフォームのパーツ単位など
+UI の最小要素をスタイライズします。
+ ================================== */
+body {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  background: #fff;
+  color: #000;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 280px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding-bottom: 390px;
+    overflow-x: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "garamond", sans-serif;
+}
+
+p {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+}
+
+p.desc-bold {
+  font-size: 0.875em;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+}
+
+.section__lead {
+  font-size: 0.875em;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+label {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  padding: 9px 10px;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  border: solid 1px #000;
+  background: #fff;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+select#entry-category.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required.input__unit-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 9px 10px;
+}
+
+textarea {
+  resize: none;
+  padding: 9px 10px;
+}
+
+::placeholder {
+  color: #7f7f7f;
+}
+
+button {
+  font-family: "garamond", sans-serif;
+  font-style: italic;
+  padding: 0 0.9em;
+}
+
+.section__ttl {
+  font-size: 74px;
+  font-family: "garamond", sans-serif;
+  text-align-last: left;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 767px) {
+  .section__ttl {
+    font-size: 40px;
+  }
+}
+
+br.br-tab {
+  display: none;
+}
+
+br.br-sp {
+  display: none;
+}
+
+/* オリジナルパーツ ==========================*/
+#contact-btn-fix {
+  display: block;
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: 1.375em;
+  letter-spacing: 0.05em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  cursor: pointer;
+  border: none;
+  background-color: #4a4a4a;
+  color: #fff;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, #4a4a4a 50%);
+  background-image: linear-gradient(to right, transparent 50%, white 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease, letter-spacing 0.05em;
+}
+
+#contact-btn-fix:hover {
+  background-position: -100% 100%;
+  color: #4a4a4a;
+  border: solid 1px #4a4a4a;
+}
+
+.btn-map,
+#btn-more-csr,
+#contact_us-btn-top,
+.btn-more-br,
+#entry-btn-top,
+#contact-btn-confirm,
+#contact-btn-submit {
+  text-align: center;
+  display: block;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: 1.375em;
+  letter-spacing: 0.05em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  cursor: pointer;
+  border: solid 1px #000;
+  background-color: #000;
+  color: #fff !important;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, #4a4a4a 50%);
+  background-image: linear-gradient(to right, transparent 50%, white 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease, letter-spacing 0.05em;
+}
+
+.btn-map:hover,
+#btn-more-csr:hover,
+#contact_us-btn-top:hover,
+.btn-more-br:hover,
+#entry-btn-top:hover,
+#contact-btn-confirm:hover,
+#contact-btn-submit:hover {
+  background-position: -100% 100%;
+  color: #000 !important;
+  letter-spacing: 0.05em;
+  border: solid 1px #000;
+}
+
+#btn-more-works,
+#entry-btn-top.button-entry {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: 1.375em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: solid 1px #fff;
+  background-color: #fff;
+  color: #000 !important;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, black 50%);
+  background-image: linear-gradient(to right, transparent 50%, black 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s, background-color 0.5s ease, letter-spacing 0.05em;
+}
+
+#btn-more-works:hover,
+#entry-btn-top.button-entry:hover {
+  background-position: -100% 100%;
+  color: #fff !important;
+  letter-spacing: 0.05em;
+  border: solid 1px #fff;
+}
+
+#btn-more-works,
+#btn-map,
+#btn-more-csr,
+.btn-more,
+.btn-more-br,
+#entry-btn-top.button-entry,
+#contact_us-btn-top {
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+
+#btn-map,
+#btn-more-works,
+#btn-more-csr {
+  width: 56px;
+  height: 22px;
+  font-size: 0.875em;
+  letter-spacing: 0.05em;
+}
+
+#btn-map {
+  width: 51px;
+  height: 18px;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+}
+
+/* サイドバー ---------------------------*/
+.sidebar-right a {
+  color: #fff;
+}
+
+.sidebar-right a:link {
+  color: #fff;
+}
+
+.sidebar-left a {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.sidebar-left a:link {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.aside__lists a {
+  font-size: 1.625em;
+  font-family: "garamond", sans-serif;
+}
+
+/* ヘッダー ==========================*/
+aside.sidebar-right {
+  background-color: #000;
+}
+
+/* MV ==============================*/
+/* ポートフォリオ =========================*/
+.section__portfolio {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .section__portfolio {
+    background-color: #fff;
+  }
+}
+
+.card-ttl {
+  font-size: 1.375em;
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+}
+
+.card-desc > p {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 0.875em;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* ワークス ==========================*/
+section#top-works.section__pf {
+  color: #fff;
+  background: #000;
+}
+
+section#top-works.section__pf .info-wrapper-pc {
+  color: #fff;
+}
+
+section#top-works.section__pf .info-wrapper-pc .info-category {
+  color: #fff;
+}
+
+section#top-works.section__pf .info-wrapper-pc .info-ttl {
+  color: #fff;
+}
+
+.slider__btn-wrapper {
+  color: #000;
+  font-size: 0.875em;
+  letter-spacing: 0.05em;
+}
+
+.slider__btn-wrapper .”slick-next” {
+  font-family: "garamond", sans-serif;
+  padding: 0 5px;
+}
+
+.slider__btn-wrapper .”slick-prev” {
+  font-family: "garamond", sans-serif;
+  padding: 0 5px;
+}
+
+/* スライダー ---------------------------*/
+.pagenation__btn-wrapper {
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.pagenation__btn-wrapper a {
+  color: #000;
+}
+
+.pagenation__btn-wrapper a:link {
+  color: #000;
+}
+
+.pagenation__btn-wrapper .pagenation-next a {
+  color: #000;
+}
+
+.pagenation__btn-wrapper .pagenation-next a:link {
+  color: #000;
+}
+
+section#top-works {
+  color: #fff;
+}
+
+section#top-works div a {
+  color: #fff;
+}
+
+section#top-works div a:link {
+  color: #fff;
+}
+
+section#top-csr {
+  color: #000;
+}
+
+section#top-csr div a {
+  color: #000;
+}
+
+section#top-csr div a:link {
+  color: #000;
+}
+
+.info-wrapper-pc {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.info-wrapper-pc .info-category {
+  font-size: 1.375em;
+  font-weight: bold;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+.info-wrapper-pc .info-category a {
+  font-size: 1.375em;
+  font-weight: bold;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+.info-wrapper-pc .info-ttl {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 0.875em;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 767px) {
+  .info-wrapper-pc .info-ttl {
+    font-size: 0.8125em;
+  }
+}
+
+section#top-works div.info-wrapper-pc div a,
+section#top-csr div.info-wrapper-pc div a {
+  text-align: right;
+  font-size: 1.375em;
+  font-family: "garamond", sans-serif;
+}
+
+/* ニュース ==========================*/
+.section__news {
+  background-color: #000;
+  color: #fff;
+}
+
+.section__news:link {
+  color: #fff;
+}
+
+.section__news .news__item-date {
+  font-family: "garamond", sans-serif;
+  font-size: 1em;
+  text-align-last: left;
+}
+
+.section__news .news__item-txt-wrapper .news__item-ttl {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 1.375em;
+  font-weight: bold;
+}
+
+.section__news .news__item-txt-wrapper .news__item-desc {
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 0.875em;
+}
+
+@media screen and (max-width: 767px) {
+  .section__news .news__item-date {
+    font-size: 0.875em;
+    text-align-last: left;
+  }
+  .section__news .news__item-ttl {
+    font-size: 1em;
+  }
+  .section__news .news__item-desc {
+    line-height: 1.6;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    font-size: 0.8125em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* カンパニー ========================*/
+section.section__profile {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+section.section__profile .profile__info-ttl {
+  font-size: 0.9375em;
+  font-weight: bold;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__profile .info_desc-primary {
+  font-size: 0.9375em;
+  font-weight: bold;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__profile .info_desc-secondary {
+  font-size: 0.8125em;
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  section.section__profile .profile__info-ttl {
+    font-size: 0.8125em;
+    font-weight: bold;
+  }
+  section.section__profile .profile__info_desc .info_desc-primary {
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    font-size: 0.8125em;
+    letter-spacing: 0.05em;
+  }
+  section.section__profile .profile__info_desc .info_desc-secondary {
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* リクルート ========================*/
+.section__lead {
+  font-size: 0.8125em;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+section.section__career {
+  background-color: #000;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  color: #fff;
+}
+
+section.section__career h3.career_sub_ttl {
+  font-size: 1.25em;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion {
+  border-top: 1px #fff solid;
+  border-collapse: collapse;
+}
+
+section.section__career div.career__accordion:last-child {
+  border-bottom: 1px #fff solid;
+}
+
+section.section__career div.career__accordion .career__accordion-ttl {
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion .career__content-ttl {
+  font-size: 0.875em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion p.career__content-txt {
+  font-size: 0.875em;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion .treatment-ttl {
+  font-size: 0.875em;
+  font-weight: bold;
+}
+
+section.section__career div.career__accordion .treatment-txt {
+  font-size: 0.875em;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+  section.section__career .career_sub_ttl {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  section.section__career .career__accordion {
+    border-top: 1px #000 solid;
+    border-collapse: collapse;
+  }
+  section.section__career .career__accordion:last-child {
+    border-bottom: 1px #000 solid;
+  }
+  section.section__career .career__accordion .career__accordion-ttl {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  }
+  section.section__career .career__accordion .career__content-unit .career__content-ttl {
+    font-size: 0.8125em;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  section.section__career .career__accordion .career__content-unit .career__content-txt {
+    display: inline-block;
+    font-size: 0.8125em;
+    line-height: 1.6;
+  }
+  section.section__career .career__accordion .treatment-unit .treatment-ttl {
+    font-size: 0.8125em;
+    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  section.section__career .career__accordion .treatment-unit .treatment-txt {
+    font-size: 0.8125em;
+    line-height: 1.6;
+  }
+}
+
+/* コンタクト ========================*/
+.section__skills .skills__info-ttl {
+  font-size: 1.375em;
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+}
+
+.section__skills .skills__info-desc {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 0.875em;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* フッター =========================*/
+footer {
+  background-color: #000;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:link {
+  color: #fff;
+}
+
+footer .copyright {
+  color: #fff;
+}
+
+img#footer__logo {
+  width: 170px;
+  height: auto;
+}
+
+.footer__lists a {
+  font-size: 1.125em;
+  color: #fff;
+  font-family: "garamond", sans-serif;
+}
+
+.footer__lists a:link {
+  color: #fff;
+}
+
+.footer__lists {
+  font-size: 1.125em;
+  color: #fff;
+  font-family: "garamond", sans-serif;
+}
+
+.footer__lists:link {
+  color: #000;
+}
+
+.copyright {
+  text-align: right;
+  font-family: "garamond", sans-serif;
+  color: #fff;
+  font-size: 0.75em;
+}
+
+/* 投稿ページ用  */
+.entry-category-parent {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "DIN Condensed", sans-serif;
+  margin-bottom: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  .entry-category-parent {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "garamond", sans-serif;
+  }
+}
+
+span.wpcf7-not-valid-tip {
+  color: #dc3232;
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5em;
+}
+
+/* 投稿記事のフォント ---------------------------*/
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-weight: bold;
+  font-family: "garamond", sans-serif;
+}
+
+.entry-content h1 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.entry-content h2 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.entry-content h3 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.entry-content h4 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.entry-content h5 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+.entry-content h6 {
+  font-family: "garamond", sans-serif;
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+.entry-content p {
+  line-height: 1.6;
+  line-height: 1.6;
+  font-size: 0.875em;
+}
+
+.entry-content time {
+  font-family: Helvetica, "Helvetica Neue";
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.875em;
+}
+
+.entry-content h2 {
+  font-size: 0.9375em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.entry-content p {
+  line-height: 1.6;
+  font-size: 0.875em;
+}
+
+@media screen and (max-width: 767px) {
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .entry-content h5,
+  .entry-content h6 {
+    font-weight: bold;
+    font-family: "garamond", sans-serif;
+  }
+  .entry-content h1 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .entry-content h2 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+  }
+  .entry-content h3 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  .entry-content h4 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .entry-content h5 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 0.5em;
+  }
+  .entry-content h6 {
+    font-family: "garamond", sans-serif;
+    font-weight: bold;
+    font-size: 0.5em;
+  }
+  .entry-content p {
+    line-height: 1.6;
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  }
+  .entry-content time {
+    font-family: Helvetica, "Helvetica Neue";
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 0.875em;
+  }
+}
+
+img.attachment-large.size-large.wp-post-image {
+  width: 100%;
+  height: auto;
+}
+
+/* WORKS投稿記事用 ==========================*/
+.entry-category-child {
+  font-family: "garamond", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h1.entry-ttl {
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p.launch-date {
+  font-size: 0.875em;
+  font-weight: bold;
+  font-family: "garamond", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  p.launch-date {
+    font-size: 0.875em;
+  }
+}
+
+.external-link {
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.9375em;
+  font-family: "garamond", sans-serif;
+}
+
+.external-link a {
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.9375em;
+  font-family: "garamond", sans-serif;
+  color: #000;
+}
+
+.external-link a:link {
+  color: #000;
+}
+
+/* コンタクトフォームページ用 --------------------*/
+label.input__unit-label {
+  font-size: 0.875em;
+}
+
+/* タブレット用レスポンシブ===================*/
+@media (max-width: 900px) {
+  .br-tab {
+    display: block;
+  }
+}
+
+/* スマホ用レスポンシブ======================*/
+@media (max-width: 670px) {
+  .br-sp {
+    display: block;
+  }
+}
+
+.aside__list > a,
+.footer__list > a {
+  transition: opacity 0.2s;
+}
+
+.aside__list > a:hover,
+.footer__list > a:hover {
+  opacity: 0.6;
+}
+
+/* アニメーション ---------------------------*/

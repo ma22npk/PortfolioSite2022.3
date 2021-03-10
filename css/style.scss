@@ -1,0 +1,905 @@
+@import "_values";
+
+/* Lv.1 ATOMS =========================
+/* 全体の共通で使う値を設定。
+配色・フォントといった定義、
+ラベルボタンにフォームのパーツ単位など
+UI の最小要素をスタイライズします。
+ ================================== */
+
+body {
+  font-family: $font_family-MinchoB;
+  background: $bg_c-Base;
+  color: $color-back;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 280px;
+  overflow-x: hidden;
+  @include mq-down() {
+    padding-bottom: 390px;
+    overflow-x: hidden;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-brand;
+}
+p {
+  font-family: $font_family-MinchoB;
+  line-height: $lineHeight-s;
+}
+p.desc-bold {
+  font-size: $em-14px;
+  font-weight: bold;
+  font-family: $font_family-MinchoB;
+  line-height: $lineHeight-s;
+}
+.section__lead {
+  font-size: $em-14px;
+  font-weight: bold;
+  font-family: $font_family-MinchoB;
+  line-height: $lineHeight-s;
+  letter-spacing: $letterSpacing-s;
+}
+a:hover {
+  text-decoration: none;
+}
+label {
+  font-family: $font_family-MinchoB;
+  font-size: $em-16px;
+  font-weight: bold;
+}
+input,
+select,
+textarea {
+  padding: 9px 10px;
+  font-family: $font_family-MinchoB;
+  border: solid 1px $bg_c-black;
+  background: $bg_c-Base;
+  font-size: $em-16px;
+  line-height: $lineHeight-s;
+}
+
+select#entry-category.wpcf7-form-control.wpcf7-select.wpcf7-validates-as-required.input__unit-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 9px 10px;
+  // font-family: $font_family-MinchoB;
+  // border: solid 1px $bg_c-black;
+  // background: $bg_c-Base;
+  // font-size: $em-16px;
+  // line-height:$lineHeight-s;
+}
+textarea {
+  // 拡大機能の禁止
+  resize: none;
+  padding: 9px 10px;
+}
+::placeholder {
+  color: #7f7f7f;
+}
+
+button {
+  font-family: $font_family-brand;
+  font-style: italic;
+  padding: 0 0.9em;
+}
+
+section {
+  // padding: 80px 0 70px;
+}
+
+// 全体 ===========================
+
+.section__ttl {
+  font-size: 74px;
+  font-family: $font_family-brand;
+  text-align-last: left;
+  letter-spacing: $letterSpacing-s;
+  @include mq-down {
+    font-size: 40px;
+  }
+}
+
+br.br-tab {
+  display: none;
+}
+br.br-sp {
+  display: none;
+}
+
+/* オリジナルパーツ ==========================*/
+
+// 横からワイプするボタン（灰色）
+#contact-btn-fix {
+  display: block;
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: $em-22px;
+  letter-spacing: $letterSpacing-s;
+  font-family: $font_family-MinchoB;
+  cursor: pointer;
+  border: none;
+  background-color: $color-gray;
+  color: #fff;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, rgba(74, 74, 74, 1) 50%);
+  background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 1) 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease, letter-spacing 0.05em;
+  &:hover {
+    background-position: -100% 100%;
+    color: $color-gray;
+    // letter-spacing: $letterSpacing-s;
+    border: solid 1px $color-gray;
+  }
+}
+// 横からワイプするボタン（黒）
+.btn-map,
+#btn-more-csr,
+#contact_us-btn-top,
+.btn-more-br,
+#entry-btn-top,
+#contact-btn-confirm,
+#contact-btn-submit {
+  text-align: center;
+  display: block;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: $em-22px;
+  letter-spacing: $letterSpacing-s;
+  font-family: $font_family-MinchoB;
+  cursor: pointer;
+  border: solid 1px $bg_c-black;
+  background-color: $bg_c-black;
+  color: $color-white !important;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, rgba(74, 74, 74, 1) 50%);
+  background-image: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 1) 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease, letter-spacing 0.05em;
+  &:hover {
+    background-position: -100% 100%;
+    color: #000 !important;
+    letter-spacing: $letterSpacing-s;
+    border: solid 1px #000;
+  }
+}
+
+// 横からワイプするボタン（白）
+#btn-more-works,
+#entry-btn-top.button-entry {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0;
+  font-weight: bold;
+  width: 218px;
+  height: 40px;
+  font-size: $em-22px;
+  letter-spacing: $letterSpacing-s;
+  cursor: pointer;
+  border: solid 1px $bg_c-Base;
+  background-color: $bg_c-Base;
+  color: #000 !important;
+  background-size: 200% 100%;
+  background-image: -webkit-linear-gradient(left, transparent 50%, rgba(0, 0, 0, 1) 50%);
+  background-image: linear-gradient(to right, transparent 50%, rgba(0, 0, 0, 1) 50%);
+  -webkit-transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease;
+  transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s, color 0.5s ease 0s,
+    background-color 0.5s ease, letter-spacing 0.05em;
+  &:hover {
+    background-position: -100% 100%;
+    color: #fff !important;
+    letter-spacing: $letterSpacing-s;
+    border: solid 1px #fff;
+  }
+}
+
+//エントリーボタン, コンタクトアスボタン モアボタン
+#btn-more-works,
+#btn-map,
+#btn-more-csr,
+.btn-more,
+.btn-more-br,
+#entry-btn-top.button-entry,
+#contact_us-btn-top {
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+#btn-map,
+#btn-more-works,
+#btn-more-csr {
+  width: 56px;
+  height: 22px;
+  font-size: $em-14px;
+  letter-spacing: $letterSpacing-s;
+}
+#btn-map {
+  width: 51px;
+  height: 18px;
+  font-size: $em-12px;
+  letter-spacing: $letterSpacing-s;
+}
+/* サイドバー ---------------------------*/
+.sidebar-right {
+  a {
+    color: $color-white;
+    &:link {
+      color: $color-white;
+    }
+  }
+}
+
+.sidebar-left {
+  a {
+    color: $color-white;
+    mix-blend-mode: difference;
+    &:link {
+      color: $color-white;
+      mix-blend-mode: difference;
+    }
+  }
+}
+
+//  サイドバーリスト
+.aside__lists {
+  a {
+    font-size: $em-26px;
+    font-family: $font_family-brand;
+  }
+}
+
+/* ヘッダー ==========================*/
+aside.sidebar-right {
+  background-color: $bg_c-black;
+}
+
+/* MV ==============================*/
+/* ポートフォリオ =========================*/
+.section__portfolio {
+  background-color: $bg_c-Base;
+  .section__ttl {
+  }
+  @include mq-down {
+    background-color: $bg_c-Base;
+    .section__ttl {
+
+    }
+    .card-item {
+
+    }
+  }
+}
+
+// カード
+
+.card-ttl {
+  font-size: $em-22px;
+  font-family: $font_family-brand;
+  font-weight: bold;
+}
+.card-desc > p {
+  font-family: $font_family-MinchoB;
+  font-size: $em-14px;
+  // font-weight: bold;
+  line-height: $lineHeight-s;
+  letter-spacing: $letterSpacing-s;
+}
+
+/* ワークス ==========================*/
+section#top-works.section__pf {
+  color: $color-white;
+  background: $bg_c-Main;
+  .info-wrapper-pc {
+    color: $bg_c-Base;
+    .info-category {
+      color: $bg_c-Base;
+    }
+    .info-ttl {
+      color: $bg_c-Base;
+    }
+  }
+}
+
+.slider__btn-wrapper {
+  color: #000;
+  font-size: $em-14px;
+// font-style: italic;
+  letter-spacing: $letterSpacing-s;
+
+  .”slick-next” {
+    font-family: $font_family-brand;
+    padding: 0 5px;
+  }
+  .”slick-prev” {
+    font-family: $font_family-brand;
+    padding: 0 5px;
+  }
+}
+
+// // スライダーボタン
+// .”slick-prev”,
+// .”slick-next” {
+//   font-weight: bold;
+// }
+
+/* スライダー ---------------------------*/
+.pagenation__btn-wrapper {
+  a {
+    color: #000;
+    &:link {
+      color: #000;
+    }
+  }
+
+  color: #000;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-s;
+  .pagenation-prev {
+  }
+  .pagenation-next {
+    a {
+      color: #000;
+      &:link {
+        color: #000;
+      }
+    }
+  }
+}
+
+// スライダーの情報
+
+section#top-works {
+  color: $color-white;
+  div {
+    a {
+      color: $color-white;
+      &:link {
+        color: $color-white;
+      }
+    }
+  }
+}
+section#top-csr {
+  color: $color-black;
+  div {
+    a {
+      color: $color-black;
+      &:link {
+        color: $color-black;
+      }
+    }
+  }
+}
+
+.info-wrapper-pc {
+  color: $color-white;
+  background: rgba($color: $bg_c-black, $alpha: .9);
+  .info-category {
+    font-size: $em-22px;
+    font-weight: bold;
+    line-height: $lineHeight-s;
+    font-family: $font_family-MinchoB;
+    a {
+      font-size: $em-22px;
+      font-weight: bold;
+      line-height: $lineHeight-s;
+      font-family: $font_family-MinchoB;
+    }
+  }
+  .info-ttl {
+    font-family: $font_family-MinchoB;
+    font-size: $em-14px;
+    letter-spacing: $letterSpacing-s;
+  }
+  @include mq-down() {
+    .info-category {
+    }
+    .info-ttl {
+      font-size: $em-13px;
+    }
+  }
+}
+
+// スライダーのカテゴリーの表示
+section#top-works div.info-wrapper-pc div a,
+section#top-csr div.info-wrapper-pc div a {
+  text-align: right;
+  font-size: $em-22px;
+  font-family: $font_family-brand;
+}
+// トップページワークスのタイトル
+
+/* ニュース ==========================*/
+.section__news {
+  background-color: $bg_c-Main;
+  color: $color-white;
+  &:link {
+    color: $color-white;
+  }
+  .news__item-date {
+    font-family: $font_family-brand;
+    font-size: $em-16px;
+    text-align-last: left;
+  }
+  .news__item-txt-wrapper {
+    .news__item-ttl {
+      font-family: $font_family-MinchoB;
+      font-size: $em-22px;
+      font-weight: bold;
+    }
+    .news__item-desc {
+      line-height: $lineHeight-s;
+      font-family: $font_family-MinchoB;
+      font-size: $em-14px;
+    }
+  }
+  @include mq-down() {
+    .news__item-date {
+      font-size: $em-14px;
+
+      text-align-last: left;
+    }
+    .news__item-ttl {
+      font-size: $em-16px;
+    }
+    .news__item-desc {
+      line-height: $lineHeight-s;
+      font-family: $font_family-MinchoB;
+      font-size: $em-13px;
+      font-weight: 500;
+      letter-spacing: $letterSpacing-s;
+    }
+  }
+}
+
+/* カンパニー ========================*/
+section.section__profile {
+  font-family: $font_family-MinchoB;
+  color: $color-black;
+  background: $bg_c-Base;
+  .profile__info-ttl {
+    font-size: $em-15px;
+    font-weight: bold;
+    line-height: $lineHeight-s;
+    font-family: $font_family-MinchoB;
+  }
+  .info_desc-primary {
+    font-size: $em-15px;
+    font-weight: bold;
+    line-height: $lineHeight-s;
+    font-family: $font_family-MinchoB;
+  }
+  .info_desc-secondary {
+    font-size: $em-13px;
+    font-weight: bold;
+    line-height: $lineHeight-s;
+    letter-spacing: $letterSpacing-s;
+    font-family: $font_family-MinchoB;
+  }
+
+  @include mq-down() {
+    .profile__info-ttl {
+      font-size: $em-13px;
+      font-weight: bold;
+    }
+    .profile__info_desc {
+      .info_desc-primary {
+        font-family: $font_family-MinchoB;
+        font-weight: 500;
+        line-height: $lineHeight-s;
+        font-size: $em-13px;
+        letter-spacing: $letterSpacing-s;
+      }
+      .info_desc-secondary {
+        font-family: $font_family-MinchoB;
+        font-weight: 500;
+        line-height: $lineHeight-s;
+        font-size: $em-12px;
+        letter-spacing: $letterSpacing-s;
+      }
+    }
+  }
+}
+
+/* リクルート ========================*/
+.section__lead {
+  font-size: $em-13px;
+  font-weight: 500;
+  line-height: $lineHeight-s;
+}
+
+section.section__career {
+  background-color: $bg_c-Main;
+  font-family: $font_family-MinchoB;
+  color: $color-white;
+  h3.career_sub_ttl {
+    font-size: $em-20px;
+    font-weight: bold;
+    font-family: $font_family-MinchoB;
+  }
+  div.career__accordion {
+    border-top: 1px $bg_c-Base solid;
+    border-collapse: collapse;
+    &:last-child {
+      border-bottom: 1px $bg_c-Base solid;
+    }
+    .career__accordion-ttl {
+      font-size: $em-16px;
+      font-weight: bold;
+      letter-spacing: $letterSpacing-s;
+      font-family: $font_family-MinchoB;
+    }
+
+    .career__content-ttl {
+      font-size: $em-14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-family: $font_family-MinchoB;
+    }
+    p.career__content-txt {
+      font-size: $em-14px;
+      line-height: $lineHeight-s;
+      font-family: $font_family-MinchoB;
+    }
+    .treatment-ttl {
+      font-size: $em-14px;
+      font-weight: bold;
+    }
+    .treatment-txt {
+      font-size: $em-14px;
+      line-height: $lineHeight-s;
+    }
+  }
+
+  @include mq-down() {
+    .career_sub_ttl {
+      font-size: $em-20px;
+      font-weight: bold;
+    }
+
+    .career__accordion {
+      border-top: 1px $color-back solid;
+      border-collapse: collapse;
+      &:last-child {
+        border-bottom: 1px $color-back solid;
+      }
+      .career__accordion-ttl {
+        font-size: $em-16px;
+        font-weight: bold;
+        letter-spacing: $letterSpacing-s;
+        font-family: $font_family-MinchoB;
+      }
+      .career__content-unit {
+        .career__content-ttl {
+          font-size: $em-13px;
+          font-weight: 500;
+          margin-bottom: 4px;
+          letter-spacing: $letterSpacing-s;
+        }
+        .career__content-txt {
+          display: inline-block;
+          font-size: $em-13px;
+          line-height: $lineHeight-s;
+        }
+      }
+      .treatment-unit {
+        .treatment-ttl {
+          font-size: $em-13px;
+          font-weight: bold;
+          font-weight: 500;
+          letter-spacing: $letterSpacing-s;
+        }
+        .treatment-txt {
+          font-size: $em-13px;
+          line-height: $lineHeight-s;
+        }
+      }
+    }
+  }
+}
+
+/* コンタクト ========================*/
+.section__skills {
+  .section__ttl {
+  }
+  .section__lead {
+  }
+
+  .skills__info-ttl {
+    font-size: $em-22px;
+    font-family: $font_family-brand;
+    font-weight: bold;
+  }
+  .skills__info-desc {
+    font-family: $font_family-MinchoB;
+    font-size: $em-14px;
+    // font-weight: bold;
+    line-height: $lineHeight-s;
+    letter-spacing: $letterSpacing-s;
+  }
+}
+
+/* フッター =========================*/
+
+footer {
+  background-color: $bg_c-Main;
+  a {
+    color: $color-white;
+    &:link {
+      color: $color-white;
+    }
+  }
+  .copyright {
+    color: $color-white;
+  }
+}
+img#footer__logo {
+  width: 170px;
+  height: auto;
+}
+
+.footer__lists {
+  a {
+    font-size: $em-18px;
+    color: $color-white;
+    font-family: $font_family-brand;
+    &:link {
+      color: $color-white;
+    }
+  }
+}
+
+.footer__lists {
+  font-size: $em-18px;
+  color: #fff;
+  font-family: $font_family-brand;
+  &:link {
+    color: $color-black;
+  }
+}
+
+.copyright {
+  text-align: right;
+  font-family: $font_family-brand;
+  color: $color-white;
+  font-size: $em-12px;
+}
+
+/* 投稿ページ用  */
+.entry-category-parent {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "DIN Condensed", sans-serif;
+  margin-bottom: 28px;
+  @include mq-down() {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: $font_family-brand;
+  }
+}
+// コンタクトフォームのバリデーションmsg
+span.wpcf7-not-valid-tip {
+  color: #dc3232;
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5em;
+}
+/* 投稿記事のフォント ---------------------------*/
+.entry-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    font-family: $font_family-brand;
+  }
+  h1 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  h2 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: $em-32px;
+  }
+  h3 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: $em-24px;
+  }
+  h4 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: $em-16px;
+  }
+  h5 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: $em-8px;
+  }
+  h6 {
+    font-family: $font_family-brand;
+    font-weight: bold;
+    font-size: $em-8px;
+  }
+  p {
+    line-height: $lineHeight-s;
+    line-height: $lineHeight-s;
+    // letter-spacing: $letterSpacing-s;
+    font-size: $em-14px;
+  }
+  time {
+    font-family: Helvetica, "Helvetica Neue";
+    margin-bottom: 20px;
+    line-height: $lineHeight-s;
+    font-size: $em-14px;
+  }
+  // 投稿用オリジナルフォント
+  .entry-ttl {
+  }
+  h2 {
+    font-size: $em-15px;
+    font-weight: bold;
+    letter-spacing: $letterSpacing-s;
+  }
+  .entry-category-parent {
+  }
+  p {
+    line-height: $lineHeight-s;
+    font-size: $em-14px;
+  }
+
+  @include mq-down() {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+      font-family: $font_family-brand;
+    }
+    h1 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: 40px;
+    }
+    h2 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: $em-32px;
+    }
+    h3 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: $em-24px;
+    }
+    h4 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: $em-16px;
+    }
+    h5 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: $em-8px;
+    }
+    h6 {
+      font-family: $font_family-brand;
+      font-weight: bold;
+      font-size: $em-8px;
+    }
+    p {
+      line-height: $lineHeight-s;
+      font-size: $em-14px;
+      font-family: $font_family-MinchoB;
+    }
+    time {
+      font-family: Helvetica, "Helvetica Neue";
+      margin-bottom: 20px;
+      line-height: $lineHeight-s;
+      font-size: $em-14px;
+    }
+  }
+}
+
+img.attachment-large.size-large.wp-post-image {
+  width: 100%;
+  height: auto;
+}
+/* WORKS投稿記事用 ==========================*/
+.entry-category-child {
+  font-family: $font_family-brand;
+  font-size: 40px;
+  font-weight: bold;
+  @include mq-down() {
+  }
+}
+h1.entry-ttl {
+  font-family: $font_family-MinchoB;
+  font-size: $em-16px;
+  font-weight: bold;
+  @include mq-down() {
+  }
+}
+p.launch-date {
+  font-size: $em-14px;
+  font-weight: bold;
+  font-family: $font_family-brand;
+  @include mq-down() {
+    font-size: $em-14px;
+  }
+}
+.external-link {
+  text-align: right;
+  font-weight: bold;
+  font-size: $em-15px;
+  font-family: $font_family-brand;
+  a {
+    text-align: right;
+    font-weight: bold;
+    font-size: $em-15px;
+    font-family: $font_family-brand;
+    color: $color-black;
+    &:link {
+      color: $color-black;
+    }
+  }
+}
+
+/* コンタクトフォームページ用 --------------------*/
+label.input__unit-label {
+  font-size: $em-14px;
+}
+
+/* タブレット用レスポンシブ===================*/
+@media (max-width: 900px) {
+  .br-tab {
+    display: block;
+  }
+}
+
+/* スマホ用レスポンシブ======================*/
+@media (max-width: 670px) {
+  .br-sp {
+    display: block;
+  }
+}
+
+.aside__list > a,
+.footer__list > a {
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+/* アニメーション ---------------------------*/

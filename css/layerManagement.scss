@@ -1,0 +1,38 @@
+$z-map: arrowUnit, aside_left ,header,header_logo, mask, aside_right, header_nav_btn, mask_lorder;
+
+@function getZIndex($name) {
+  @return index($z-map, $name) + 10000;
+}
+
+.sidebar-right {
+  z-index: getZIndex(aside_right);
+}
+.mask-lorder {
+  z-index: getZIndex(mask_lorder);
+}
+
+header {
+  z-index: getZIndex(header);
+}
+
+.header__logo {
+  z-index: getZIndex(header_logo);
+}
+.menu-trigger-wrapper {
+  z-index: getZIndex(header_nav_btn);
+}
+
+.sidebar-left-wrapper {
+  z-index: getZIndex(aside_left);
+}
+
+// footer {
+//   z-index: getZIndex(footer);
+// }
+
+.mask, .header-overlay {
+  z-index: getZIndex(mask);
+}
+.scroll__arrow-wrapper {
+  z-index: getZIndex(arrowUnit);
+}

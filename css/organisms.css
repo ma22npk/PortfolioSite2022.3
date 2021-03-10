@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* Lv.3  生体(ORGANISMS) ========
+分子同士を組み合わせたパーツの設定。
+items, cards, header, footerなど
+================================== */
+/* 全体 ==========================*/
+/* サイドバー -------------------------*/
+.sidebar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-left div.sidebar_left_items {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.sidebar-left div.sidebar_left_items .aside__lists {
+  width: 100%;
+}
+
+/* ヘッダー ==========================*/
+header .header__inner aside.sidebar-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+header .header__inner aside.sidebar-right div.sidebar_right_items {
+  position: absolute;
+}
+
+/* MV ==============================*/
+/* ポートフォリオ =========================*/
+div.card-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  div.card-items {
+    justify-content: center;
+  }
+}
+
+/* ワークス ==========================*/
+/* タイトル&ボタンのセットのエリア -- */
+div.csr__section__ttl-area,
+div.slider__section__ttl-area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* スライダー */
+ul.slider.slick-slider {
+  margin: 0 auto;
+}
+
+li.slick-slide:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  li.slick-slide:last-child {
+    margin-right: 0;
+  }
+}
+
+.slider_list-inner .slide_tmb {
+  position: absolute;
+}
+
+.slider_list-inner .info-wrapper-pc {
+  position: absolute;
+}
+
+/* ニュース ==========================*/
+/* ニュースアイテムス */
+@media screen and (max-width: 767px) {
+  .news__item .news__item-txt-wrapper {
+    padding-right: 0;
+    width: 100%;
+  }
+  .news__item .news__item-txt-wrapper .news__item-ttl {
+    margin-bottom: 50px;
+  }
+}
+
+/* リクルート ========================*/
+div.career__accordion-items {
+  border-collapse: collapse;
+}
+
+div.career__accordion-items div.career__accordion {
+  border-collapse: collapse;
+}
+
+/* コンタクト ========================*/
+/* フッター =========================*/
+/* 会社情報 ---------------------------*/
+ul.profile__infos {
+  height: auto;
+  text-align: left;
+}
+
+@media screen and (max-width: 767px) {
+  ul.profile__infos {
+    width: 100%;
+  }
+}

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@font-face {
+  font-family: garamond;
+  src: url("garamond.ttf");
+}
+
+/* Lv.4 テンプレート(TEMPLATES) ========
+生体の組み合わせ。ワイヤーフレーム
+================================== */
+/* 全体 ==========================*/
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* 中央寄せにするクラス ---------------------------*/
+.wrapper-center {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* ヘッダー ==========================*/
+/* MV ==============================*/
+/* サービス =========================*/
+/* ワークス ==========================*/
+/* ニュース ==========================*/
+/* カンパニー ==========================*/
+/* リクルート ========================*/
+/* コンタクト ========================*/
+/* フッター =========================*/
+footer {
+  position: absolute;
+  /*←ボディに対しての絶対位置*/
+  bottom: 0;
+  /*下に固定*/
+  width: 100%;
+}
+
+.footer__contents-wrapper {
+  display: flex;
+  flex-direction: inherit;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__contents-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.footer__lists {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+/* ボディ ---------------------------*/
+/* メイン ---------------------------*/
+.two_column-inner {
+  margin: 0 auto;
+  padding-right: 5%;
+  padding-left: calc(5% + 200px);
+  width: 100%;
+  max-width: 1280px;
+}
+
+@media screen and (max-width: 767px) {
+  .two_column-inner {
+    padding: 0 30px;
+    width: 100%;
+  }
+}
+
+/* MV ---------------------------*/
+/* ポートフォリオセクション ----------------------*/
+.card-items .card-item {
+  width: calc((100% - (40px * 2)) / 2 - 1px);
+  margin-bottom: 80px;
+}
+
+.card-items .card-item .card-tmb {
+  margin-bottom: 20px;
+}
+
+.card-items .card-item .card-tmb img {
+  width: 100%;
+  height: auto;
+}
+
+.card-items .card-item .card-ttl {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .card-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-items .card-item {
+    max-width: 420px;
+    width: 100%;
+  }
+  .card-items .card-item .card-tmb {
+    margin-bottom: 20px;
+  }
+  .card-items .card-item .card-tmb img {
+    width: 100%;
+    height: auto;
+  }
+  .card-items .card-item .card-ttl {
+    margin-bottom: 15px;
+  }
+}
+
+/* ニュースセクション ---------------------------*/
+/* スキル ---------------------------*/
+.skills__infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .skills__infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* フッター ---------------------------*/
+.input__unit {
+  align-items: start;
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  .input__unit {
+    flex-wrap: wrap;
+    align-items: start;
+  }
+}
+
+/* コンタクトフォームラッパー */
+.page__contact-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page__contact-form-wrapper .input__unit {
+  width: 100%;
+}

@@ -1,0 +1,155 @@
+@import "_values";
+
+/* Lv.3  生体(ORGANISMS) ========
+分子同士を組み合わせたパーツの設定。
+items, cards, header, footerなど
+================================== */
+/* 全体 ==========================*/
+
+/* サイドバー -------------------------*/
+.sidebar-left {
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // padding-top: 60px;
+  div.sidebar_left_items {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .aside__lists {
+      width: 100%;
+    }
+  }
+}
+
+
+/* ヘッダー ==========================*/
+header {
+  .header__inner {
+    aside.sidebar-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      div.sidebar_right_items {
+        position: absolute;
+      }
+    }
+  }
+}
+// #header-top {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+// }
+
+/* MV ==============================*/
+/* ポートフォリオ =========================*/
+
+//  カードアイテムス
+div.card-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include mq-down() {
+    justify-content: center;
+  }
+}
+/* ワークス ==========================*/
+/* タイトル&ボタンのセットのエリア -- */
+div.csr__section__ttl-area,
+div.slider__section__ttl-area {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* スライダー */
+// スライダー本体
+ul.slider.slick-slider {
+  margin: 0 auto;
+}
+
+// スライド内画像
+li.slick-slide {
+  &:last-child {
+    margin-right: 0;
+  }
+  @include mq-down() {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+// スライダーリストの中身をコントロールするインナー
+.slider_list-inner {
+  .slide_tmb {
+    position: absolute;
+  }
+  .info-wrapper-pc {
+    position: absolute;
+  }
+}
+
+/* ニュース ==========================*/
+/* ニュースアイテムス */
+.news__item {
+}
+@include mq-down() {
+  .news__item {
+    .news__item-txt-wrapper {
+      padding-right: 0;
+      width: 100%;
+      .news__item-ttl {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+/* リクルート ========================*/
+//  リクルートのアコーディオンの塊
+div.career__accordion-items {
+  border-collapse: collapse;
+  div.career__accordion {
+    border-collapse: collapse;
+    dt.career__accordion-header {
+    }
+    dd.career__accordion_body {
+      table {
+        tbody {
+          tr {
+            td.treatment-ttl {
+            }
+            td.treatment-txt {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* コンタクト ========================*/
+
+/* フッター =========================*/
+
+/* 会社情報 ---------------------------*/
+ul.profile__infos {
+
+  height: auto;
+  text-align: left;
+  li.profile__info {
+    div.profile__info-ttl {
+    }
+    div.profile__info_desc {
+      p {
+      }
+    }
+  }
+
+  @include mq-down() {
+    width: 100%;
+  }
+}

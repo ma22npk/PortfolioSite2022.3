@@ -1,0 +1,334 @@
+@import "_values";
+
+.aside__lists li a,
+.btn-trigger span {
+  transition: all 2.5s;
+}
+
+// 白いフィルター
+.filter-white {
+  transition: all 0.2s;
+  filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+// 黒いフィルター
+.filter-black {
+  transition: all 0.2s;
+  filter: invert(12%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+
+
+// スクロールのトランジション
+.lazyload {
+  transition-duration: 1200ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0;
+  transition-property: bottom, opacity;
+  position: relative;
+  opacity: 1;
+  bottom: 0;
+}
+
+.lazyload.before-load {
+  opacity: 0;
+  bottom: -200px;
+}
+
+.slide-up {
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-up > * {
+  transition-duration: 1200ms;
+  transition-delay: 0;
+  transition-property: transform;
+  margin: 0;
+}
+
+.slide-up.before-load > * {
+  transform: translate(0, 100%);
+}
+.top_news-link {
+  cursor: pointer;
+  color: $color-white;
+  transition: all 0.4s;
+  &:link {
+    color: $color-white;
+  }
+  &:hover {
+    color: gray;
+  }
+}
+
+#header__logo-top {
+  transition: all 0.4s;
+  transform-origin: left center;
+  &.is-scroll {
+    transform: scale(0.8);
+  }
+}
+// ヘッダーを固定にする
+// .header.m_fixed {
+//   left: 0;
+//   position: fixed;
+//   top: 0;
+// }
+
+.slide_tmb-mask {
+  pointer-events: none;
+}
+
+/*  スクロール時に要素を隠す ==========================*/
+.scroll__arrow-wrapper {
+  transition: all 0.4s;
+  // visibility: visible;
+  visibility: visible;
+  opacity: 1;
+}
+
+.scroll__arrow-wrapper.is-hidden {
+  @include mq-down() {
+    visibility: hidden;
+    // visibility:hidden;
+    opacity: 0;
+  }
+}
+
+.aside__lists > li > a,
+.footer__lists > li > a,
+.hover-opacity {
+  transition: all 0.4s;
+  text-decoration: none !important;
+  &:hover {
+    opacity: 0.5;
+    text-decoration: none !important;
+  }
+}
+
+// ローダー
+.mask-lorder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  place-items: center;
+  background: $bg_c-white;
+}
+.mask-lorder.is-show {
+  display: grid;
+  opacity: 0.9;
+}
+
+.radar-spinner,
+.radar-spinner * {
+  box-sizing: border-box;
+}
+
+.radar-spinner {
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+
+.radar-spinner .circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: radar-spinner-animation 2s infinite;
+}
+
+.radar-spinner .circle:nth-child(1) {
+  padding: calc(60px * 5 * 2 * 0 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(2) {
+  padding: calc(60px * 5 * 2 * 1 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(3) {
+  padding: calc(60px * 5 * 2 * 2 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(4) {
+  padding: calc(60px * 5 * 2 * 3 / 110);
+  animation-delay: 0ms;
+}
+
+.radar-spinner .circle-inner,
+.radar-spinner .circle-inner-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: calc(60px * 5 / 110) solid transparent;
+}
+
+.radar-spinner .circle-inner {
+  border-left-color: $color-gray;
+  border-right-color: $color-gray;
+}
+
+@keyframes radar-spinner-animation {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// セクションタイトル(背景色が消えてから表示される)
+[bg-hidden] {
+  color: transparent;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: color 0ms 450ms;
+  &::after {
+    background: $bg_c-black;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0, 100%);
+  }
+}
+
+[bg-hidden].is-over {
+  color: $color-black;
+  &::after {
+    animation: mask-bg 1.2s cubic-bezier(0.8, 0, 0.17, 1);
+  }
+  @keyframes mask-bg {
+    0% {
+      // transform: translate(0, 101%)
+      transform: translate(-101%, 0);
+    }
+    40%,
+    60% {
+      transform: translate(0, 0%);
+    }
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
+}
+// 【黒背景バージョン】セクションタイトル(背景色が消えてから表示される)
+[bg-hidden-bl] {
+  color: transparent;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  transition: color 0ms 450ms;
+  &::after {
+    background: $bg_c-white;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(0, 100%);
+  }
+}
+
+[bg-hidden-bl].is-over {
+  color: $color-white;
+  &::after {
+    animation: mask-bg 1.2s cubic-bezier(0.8, 0, 0.17, 1);
+  }
+  @keyframes mask-bg {
+    0% {
+      // transform: translate(0, 101%)
+      transform: translate(-101%, 0);
+    }
+    40%,
+    60% {
+      transform: translate(0, 0%);
+    }
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
+}
+// フェードイン ===========================
+[data-fadeIn] {
+  opacity: 0;
+  transform: translateY(10px);
+}
+[data-fadeIn].is-over {
+  animation: fadeIn 1.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeIn {
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// 下からフェードイン ===========================
+[data-fadeIn-b] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+[data-fadeIn-b].is-over {
+  animation: fadeInBottom 1.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeInBottom {
+  60% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// 右からフェードイン ===========================
+[data-fadeIn-r] {
+  opacity: 0;
+  transform: translateX(20px);
+}
+[data-fadeIn-r].is-over {
+  animation: fadeInRight 1.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeInRight {
+  60% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// 左からフェードイン ===========================
+[data-fadeIn-l] {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+[data-fadeIn-l].is-over {
+  animation: fadeInLeft 1.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+@keyframes fadeInLeft {
+  60% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,181 @@
+// 色を制御する変数を定義します --------------------------------
+//背景色
+// ベースカラー 白
+// $bg_c-Base: #fafafa;
+$bg_c-Base: #fff;
+// メインカラー 黒
+$bg_c-Main: #000;
+// アクセントカラー オレンジ
+$bg_c-accent: #eb5b18;
+//白
+$bg_c-white: #ffff;
+//黒
+$bg_c-black: #000;
+// フォントカラー
+$color-main: #fff;
+$color-back: #000;
+$color-Secondary: #000;
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #4a4a4a;
+// アクセントカラー オレンジ
+$color-accent: #eb5b18;
+//フォントファミリー
+@font-face {
+  font-family: garamond;
+  src: url("garamond.ttf");
+  @import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
+}
+$font_family-default: ("sans-serif");
+$font_family-brand: ("garamond", sans-serif);
+$font_family-MinchoB: ("Yu Mincho Demibold", "YuMincho Demibold", sans-serif);
+
+//line-height (line-heightは1.5〜2.0くらいがベスト)
+$lineHeight-s: 1.6;
+$lineHeight-m: 1.7;
+$lineHeight-l: 2;
+
+//letter-spacing (letter-spacingは1.5〜2.0くらいがベスト)
+$letterSpacing-s: 0.05em;
+$letterSpacing-m: 0.07em;
+$letterSpacing-l: 0.1em;
+
+// pxをem変換する変数です。
+$em-8px: 0.5em;
+$em-9px: 0.5625em;
+$em-10px: 0.625em;
+$em-11px: 0.6875em;
+$em-12px: 0.75em;
+$em-13px: 0.8125em;
+$em-14px: 0.875em;
+$em-15px: 0.9375em;
+$em-16px: 1em;
+$em-17px: 1.0625em;
+$em-18px: 1.125em;
+$em-19px: 1.1875em;
+$em-20px: 1.25em;
+$em-21px: 1.3125em;
+$em-22px: 1.375em;
+$em-23px: 1.4375em;
+$em-24px: 1.5em;
+$em-25px: 1.5625em;
+$em-26px: 1.625em;
+$em-27px: 1.6875em;
+$em-28px: 1.75em;
+$em-29px: 1.8125em;
+$em-30px: 1.875em;
+$em-31px: 1.9375em;
+$em-32px: 2em;
+$em-33px: 2.0625em;
+$em-34px: 2.125em;
+$em-35px: 2.1875em;
+$em-36px: 2.25em;
+$em-37px: 2.3125em;
+$em-38px: 2.375em;
+$em-39px: 2.4375em;
+$em-40px: 2.5em;
+$em-41px: 2.5625em;
+$em-42px: 2.625em;
+$em-43px: 2.6875em;
+$em-44px: 2.75em;
+$em-45px: 2.8125em;
+$em-46px: 2.875em;
+$em-47px: 2.9375em;
+$em-48px: 3em;
+$em-49px: 3.0625em;
+$em-50px: 3.125em;
+$em-51px: 3.1875em;
+$em-52px: 3.25em;
+$em-53px: 3.3125em;
+$em-54px: 3.375em;
+$em-55px: 3.4375em;
+$em-56px: 3.5em;
+$em-57px: 3.5625em;
+$em-58px: 3.625em;
+$em-59px: 3.6875em;
+$em-60px: 3.75em;
+$em-61px: 3.8125em;
+$em-62px: 3.875em;
+$em-63px: 3.9375em;
+$em-64px: 4em;
+$em-65px: 4.0625em;
+$em-66px: 4.125em;
+$em-67px: 4.1875em;
+$em-68px: 4.25em;
+$em-69px: 4.3125em;
+$em-70px: 4.375em;
+$em-71px: 4.4375em;
+$em-72px: 4.5em;
+$em-73px: 4.5625em;
+$em-74px: 4.625em;
+$em-75px: 4.6875em;
+$em-76px: 4.75em;
+$em-77px: 4.8125em;
+$em-78px: 4.875em;
+$em-79px: 4.9375em;
+$em-80px: 5em;
+$em-81px: 5.0625em;
+$em-82px: 5.125em;
+$em-83px: 5.1875em;
+$em-84px: 5.25em;
+$em-85px: 5.3125em;
+$em-86px: 5.375em;
+$em-87px: 5.4375em;
+$em-88px: 5.5em;
+$em-89px: 5.5625em;
+$em-90px: 5.625em;
+$em-91px: 5.6875em;
+$em-92px: 5.75em;
+$em-93px: 5.8125em;
+$em-94px: 5.875em;
+$em-95px: 5.9375em;
+$em-96px: 6em;
+$em-97px: 6.0625em;
+$em-98px: 6.125em;
+$em-99px: 6.1875em;
+$em-100px: 6.25em;
+$em-101px: 6.3125em;
+$em-102px: 6.375em;
+$em-103px: 6.4375em;
+$em-104px: 6.5em;
+$em-105px: 6.5625em;
+$em-106px: 6.625em;
+$em-107px: 6.6875em;
+$em-108px: 6.75em;
+
+$boxShadowGooglePop: 0 2px 10px rgba(0, 0, 0, 0.2);
+$boxShadowGoogleCard: 0 2px 5px rgba(0, 0, 0, 0.26);
+
+// ブレイクポイント --------------------
+// 変数の定義
+// min-width
+$breakpoint-up: (
+  "sp": "screen and (min-width: 670px)",
+  "tab": "screen and (min-width: 768px)",
+  "pc": "screen and (min-width: 1000px)",
+  "xl": "screen and (min-width: 1200px)",
+) !default;
+
+// max-width
+$breakpoint-down: (
+  "sp": "screen and (max-width: 670px)",
+  "tab": "screen and (max-width: 767px)",
+  "pc": "screen and (max-width: 999px)",
+  "xl": "screen and (max-width: 1199px)",
+) !default;
+
+// @mixinの定義
+// 呼び出し：　@include mq-down(){}
+@mixin mq-up($breakpoint: tab) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-down($breakpoint: tab) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}

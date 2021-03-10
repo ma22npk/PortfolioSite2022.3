@@ -1,0 +1,181 @@
+@import "_values";
+
+/* Lv.4 テンプレート(TEMPLATES) ========
+生体の組み合わせ。ワイヤーフレーム
+================================== */
+
+/* 全体 ==========================*/
+//  ラッパー
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* 中央寄せにするクラス ---------------------------*/
+.wrapper-center {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* ヘッダー ==========================*/
+/* MV ==============================*/
+/* サービス =========================*/
+/* ワークス ==========================*/
+
+/* ニュース ==========================*/
+/* カンパニー ==========================*/
+
+/* リクルート ========================*/
+/* コンタクト ========================*/
+/* フッター =========================*/
+footer {
+  position: absolute; /*←ボディに対しての絶対位置*/
+  bottom: 0; /*下に固定*/
+  width: 100%;
+}
+//フッターのインナー
+.footer__contents-wrapper {
+  display: flex;
+  flex-direction: inherit;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  @include mq-down {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.footer__lists {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+/* ボディ ---------------------------*/
+
+/* メイン ---------------------------*/
+.two_column-inner {
+  margin: 0 auto;
+  padding-right: 5%;
+  padding-left: calc(5% + 200px);
+  width: 100%;
+  max-width: 1280px;
+  @include mq-down(tab) {
+    padding: 0 30px;
+    width: 100%;
+  }
+}
+
+/* MV ---------------------------*/
+
+/* ポートフォリオセクション ----------------------*/
+.card-items {
+  .card-item {
+    width: calc((100% - (40px * 2)) / 2 - 1px);
+    margin-bottom: 80px;
+    .card-tmb {
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .card-ttl {
+      margin-bottom: 15px;
+    }
+    p.card-desc {
+    }
+  }
+  @include mq-down() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card-item {
+      max-width: 420px;
+      width: 100%;
+      .card-tmb {
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .card-ttl {
+        margin-bottom: 15px;
+      }
+      p.card-desc {
+      }
+    }
+  }
+}
+
+/* ニュースセクション ---------------------------*/
+
+/* スキル ---------------------------*/
+.skills__infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .skills__info {
+  }
+  @include mq-down() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .skills__info {
+
+    }
+  }
+}
+/* フッター ---------------------------*/
+
+// コンタクトフォーム
+.input__unit {
+  // 通常時は横並びで表示
+  align-items: start;
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  .input__unit-label {
+  }
+  .input__unit-select {
+  }
+  .input__unit-input {
+  }
+  .input__unit-textarea {
+  }
+  @include mq-down() {
+    flex-wrap: wrap;
+    align-items: start;
+    .input__unit-label {
+    }
+    .input__unit-input {
+    }
+    .input__unit-textarea {
+    }
+  }
+}
+/* コンタクトフォームラッパー */
+// すべてのフォーム要素の集まりの並びを管理する
+.page__contact-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  .input__unit {
+    width: 100%;
+    .input__unit-label {
+    }
+    .input__unit-select {
+    }
+    .input__unit-input {
+    }
+    .input__unit-textarea {
+    }
+  }
+}
