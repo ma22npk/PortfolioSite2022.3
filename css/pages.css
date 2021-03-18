@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
 @font-face {
   font-family: garamond;
   src: url("garamond.ttf");
@@ -317,30 +320,112 @@ header .header__inner {
 .section__mv {
   user-select: none;
   background-size: cover;
-  background-color: #ffff;
   background-repeat: no-repeat;
   background-position: center bottom;
-  height: 700px;
-  pointer-events: none;
+  background-attachment: fixed;
+  height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
-.section__mv .mv__ttl {
-  font-size: 64px;
-  color: #fff;
+.section__mv:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(0, 0, 0, 0.24);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section__mv .mv__container {
+  padding: 0.625em 1.25em;
+}
+
+.section__mv .mv__container .mv__ttl {
+  width: 560px;
+  height: auto;
+}
+
+.section__mv .mv__container .mv__ttl svg path {
+  opacity: 0;
+  fill: #eb5b18;
+  fill-opacity: 0;
+  stroke: #eb5b18;
+  stroke-width: 1px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.section__mv .mv__container .mv__catch {
+  opacity: 0;
+}
+
+.section__mv .mv__container.is-load svg path {
+  animation: 4s ease-in forwards 0.5s textAnimation;
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 1000;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    opacity: 1;
+  }
+}
+
+.section__mv .mv__container.is-load .mv__catch {
+  animation: catchFadeIn 5s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+
+@keyframes catchFadeIn {
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .section__mv {
-    height: 667px;
+    height: 100vh;
+    width: 100%;
+  }
+  .section__mv .mv__container {
+    width: 80%;
+    padding: 0.625em 1.25em;
+  }
+  .section__mv .mv__container .mv__ttl {
+    width: 100%;
+    height: auto;
+  }
+  .section__mv .mv__container .mv__ttl svg path {
+    opacity: 0;
+    fill: #eb5b18;
+    fill-opacity: 0;
+    stroke: #eb5b18;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  .section__mv .mv__container .mv__catch {
+    opacity: 0;
   }
 }
 
 /* プロフィール ---------------------------*/
 #top-profile.section__profile {
-  padding: 140px 0 80px;
+  padding: 140px 0 0px;
 }
 
 #top-profile.section__profile .two_column-inner .section__ttl {
@@ -382,12 +467,10 @@ header .header__inner {
 
 #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__sns-wrapper .profile__sns {
   width: calc(100% / 6);
-  font-size: 1.625em;
-  color: #eb5b18;
 }
 
 #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   width: 100%;
 }
 
@@ -396,8 +479,9 @@ header .header__inner {
   width: 100px;
 }
 
-#top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info.profile__info-location {
-  margin-bottom: 16px;
+#top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info_desc {
+  height: auto;
+  width: inherit;
 }
 
 #top-profile.section__profile .two_column-inner .profile__resume {
@@ -405,30 +489,7 @@ header .header__inner {
 }
 
 #top-profile.section__profile .two_column-inner .profile__resume .resume__ttl {
-  font-size: 1.25em;
-  line-height: 1.6;
-  font-weight: bold;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
   margin-bottom: 24px;
-  position: relative;
-  padding-left: 35px;
-}
-
-#top-profile.section__profile .two_column-inner .profile__resume .resume__ttl::before {
-  display: block;
-  width: 24px;
-  height: 1px;
-  position: absolute;
-  top: 16px;
-  left: 0;
-  background-color: #000;
-  content: "";
-}
-
-#top-profile.section__profile .two_column-inner .profile__resume .resume__data {
-  font-size: 0.875em;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  line-height: 1.6;
 }
 
 #top-profile.section__profile .two_column-inner .profile__resume .resume__data .lead {
@@ -445,125 +506,239 @@ header .header__inner {
   width: 45%;
 }
 
-#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl {
-  font-size: 1.25em;
-  line-height: 1.6;
-  font-weight: bold;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  margin-bottom: 24px;
-  position: relative;
-  padding-left: 35px;
-}
-
-#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl::before {
-  display: block;
-  width: 24px;
-  height: 1px;
-  position: absolute;
-  top: 16px;
-  left: 0;
-  background-color: #000;
-  content: "";
-}
-
-#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-desc {
-  font-size: 0.875em;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  line-height: 1.6;
-}
-
 @media screen and (max-width: 767px) {
   #top-profile.section__profile {
-    padding: 80px 0 40px;
+    padding: 4.5em 0;
   }
   #top-profile.section__profile .two_column-inner .section__ttl {
-    margin-bottom: 40px;
+    margin-bottom: 1em;
   }
   #top-profile.section__profile .two_column-inner .section__lead {
-    margin-bottom: 80px;
+    margin-bottom: 2em;
   }
   #top-profile.section__profile .two_column-inner .profile__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper {
     width: auto;
+    margin-right: 0;
+    padding-right: 20px;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__avatar {
     width: 270px;
-    height: 360px;
     margin-bottom: 1rem;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__sns-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-bottom: 1rem;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__sns-wrapper .profile__sns {
     width: calc(100% / 5);
-    font-size: 2em;
-    color: #000;
+  }
+  #top-profile.section__profile .two_column-inner .profile__container .profile__infos {
+    max-width: 360px;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info {
-    margin-bottom: 17px;
-    width: 100%;
+    margin-bottom: 1.25em;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info-ttl {
-    margin-right: 30px;
-    width: 100px;
-  }
-  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info_desc p:nth-child(n + 2) {
-    margin-top: 16px;
+    margin-right: 0;
+    margin-bottom: 4px;
   }
   #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info_desc .info_desc-primary {
-    margin-top: 10px;
-  }
-  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info.profile__info-location {
-    margin-bottom: 16px;
-  }
-  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info.profile__info-location .profile__info-ttl {
     width: 100%;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume {
+    margin-bottom: 48px;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .resume__data .lead {
     margin-bottom: 10px;
   }
-  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info.profile__info-location .profile__info_desc {
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision {
     width: 100%;
+    margin-bottom: 24px;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision:last-child {
+    margin-bottom: 0;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl {
+    font-size: 1.25em;
+    line-height: 1.6;
+    font-weight: bold;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 35px;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl::before {
+    display: block;
+    width: 24px;
+    height: 1px;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    background-color: #000;
+    content: "";
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-desc {
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    line-height: 1.6;
+  }
+}
+
+/* キャリア ========================*/
+.section__career {
+  padding: 140px 0 80px;
+}
+
+.section__career .two_column-inner .section__ttl {
+  margin-bottom: 40px;
+}
+
+.section__career .two_column-inner .section__lead {
+  margin-bottom: 80px;
+}
+
+.section__career .two_column-inner .career_sub_ttl {
+  margin-bottom: 48px;
+}
+
+.section__career .two_column-inner .career__accordion-items {
+  margin-bottom: 80px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion {
+  padding: 27px 27px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion-header .career__accordion-switch {
+  padding-right: 20px;
+  right: 24px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body {
+  padding: 32px 0px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body:last-child {
+  margin-bottom: 0;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit {
+  margin-bottom: 28px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit:last-child {
+  margin-bottom: 0;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content-ttl {
+  margin-right: 20px;
+}
+
+.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .treatment-unit {
+  margin-bottom: 28px;
+}
+
+.section__career .two_column-inner .career__imges {
+  margin-bottom: 4.5em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.section__career .two_column-inner .career__imges .career__imges-item {
+  width: calc((100% - (40px * 2)) / 2 - 1px);
+}
+
+.section__career .two_column-inner .career__imges .career__imges-item .career__imge {
+  width: 100%;
+  padding-top: 56%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.25em;
+}
+
+.section__career .two_column-inner .career__imges .career__imges-item .caption {
+  font-size: 0.875em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+  .section__career {
+    padding: 90px 0;
+  }
+  .section__career .two_column-inner .section__ttl {
+    margin-bottom: 40px;
+  }
+  .section__career .two_column-inner .section__lead {
+    margin-bottom: 80px;
+  }
+  .section__career .two_column-inner .career_sub_ttl {
+    margin-bottom: 43px;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion {
+    padding: 26px 0;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion-header .career__accordion-switch {
+    padding-right: 20px;
+    right: 24px;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body {
+    padding-top: 34px;
+    width: 100%;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body:last-child {
+    margin-bottom: 0;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content-ttl {
+    margin-bottom: 4px;
+  }
+  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content .treatment-unit .treatment-ttl {
+    margin-bottom: 4px;
+  }
+  .section__career .two_column-inner .career__imges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section__career .two_column-inner .career__imges .career__imges-item {
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
+  .section__career .two_column-inner .career__imges .career__imges-item:last-child {
+    margin-bottom: 0;
+  }
+  .section__career .two_column-inner .career__imges .career__imges-item .career__imge {
+    width: 100%;
+    padding-top: 56%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1.25em;
+  }
+  .section__career .two_column-inner .career__imges .career__imges-item .caption {
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    line-height: 1.6;
   }
 }
 
 /* ポートフォリオ =========================*/
-.section__portfolio {
-  pointer-events: none;
-  padding: 140px 0 80px;
-}
-
-.section__portfolio .two_column-inner .section__ttl {
-  margin-bottom: 40px;
-}
-
-.section__portfolio .two_column-inner .section__lead {
-  margin-bottom: 80px;
-}
-
-@media screen and (max-width: 767px) {
-  .section__portfolio {
-    padding: 90px 0 30px;
-  }
-  .section__portfolio .two_column-inner .section__ttl {
-    margin-bottom: 40px;
-  }
-  .section__portfolio .two_column-inner .section__lead {
-    margin-bottom: 80px;
-  }
-  .section__portfolio .two_column-inner .card-item {
-    margin-bottom: 36px;
-  }
-}
-
 /* ワークス&セクション共通 ==========================*/
 .pagenation__btn-wrapper .”slick-prev”::after,
 .slider__btn-wrapper .”slick-prev”::after {
-  top: 7px;
+  top: 14px;
   right: 4px;
   transition: all 0.2s;
 }
@@ -575,7 +750,7 @@ header .header__inner {
 
 .pagenation__btn-wrapper .”slick-next”::after,
 .slider__btn-wrapper .”slick-next”::after {
-  top: 7px;
+  top: 14px;
   left: 4px;
   transition: all 0.2s;
 }
@@ -668,7 +843,7 @@ header .header__inner {
 }
 
 .slider.slick-slider .slick-slide .slider_list-inner .info-wrapper-pc .btn-more {
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 767px) {
@@ -685,7 +860,7 @@ header .header__inner {
     width: 100vw;
   }
   .slider.slick-slider .slick-slide .slider_list-inner .slide_tmb {
-    width: 100vw;
+    width: 96vw;
     height: 40vh;
   }
   .slider.slick-slider .slick-slide .slider_list-inner .slide_tmb .slide_tmb-mask {
@@ -698,10 +873,9 @@ header .header__inner {
     right: auto;
   }
   .slider.slick-slider .slick-slide .slider_list-inner .info-wrapper-pc {
-    text-align: right;
     top: 42vh;
-    width: 95vw;
-    padding: 0 1px 0 10vw;
+    width: 96vw;
+    padding: 10px 0 10px 7vw;
   }
   .slider.slick-slider .slick-slide .slider_list-inner .info-wrapper-pc .info-ttl {
     width: 100%;
@@ -712,7 +886,7 @@ header .header__inner {
   }
 }
 
-/* ワークスセクション ---------------------------*/
+/* セクション ---------------------------*/
 .section__pf {
   padding: 140px 0;
 }
@@ -733,11 +907,14 @@ header .header__inner {
     padding-right: 0;
     padding-left: 0;
   }
+  .section__pf .two_column-inner .section__lead {
+    padding: 0 5%;
+  }
 }
 
 /* Past Activities(活動実績)セクション ---------------------------*/
 .section__news {
-  padding: 140px 0 80px;
+  padding: 140px 0 0px;
 }
 
 .section__news .section__ttl {
@@ -768,7 +945,7 @@ header .header__inner {
 
 @media screen and (max-width: 767px) {
   .section__news {
-    padding: 90px 0 17px;
+    padding: 80px 0;
   }
   .section__news .section__ttl {
     margin-bottom: 40px;
@@ -786,141 +963,7 @@ header .header__inner {
     width: 100%;
   }
   .section__news .news__items .news__item .news__item-txt-wrapper .news__item-ttl {
-    margin-bottom: 47px;
-  }
-}
-
-/* キャリア ========================*/
-.section__career {
-  padding: 140px 0 80px;
-}
-
-.section__career .two_column-inner .section__ttl {
-  margin-bottom: 40px;
-}
-
-.section__career .two_column-inner .section__lead {
-  margin-bottom: 80px;
-}
-
-.section__career .two_column-inner .career_sub_ttl {
-  margin-bottom: 48px;
-}
-
-.section__career .two_column-inner .career__accordion-items {
-  margin-bottom: 80px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion {
-  padding: 27px 27px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion-header .career__accordion-switch {
-  padding-right: 20px;
-  right: 24px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body {
-  padding: 32px 0px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body:last-child {
-  margin-bottom: 0;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit {
-  margin-bottom: 28px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit:last-child {
-  margin-bottom: 0;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content-ttl {
-  margin-right: 20px;
-}
-
-.section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .treatment-unit {
-  margin-bottom: 28px;
-}
-
-.section__career .two_column-inner .button-entry-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 52px;
-}
-
-.section__career .two_column-inner .button-entry-wrapper #entry-btn-top.button-entry {
-  margin: 0;
-  width: 155px;
-}
-
-.section__career .two_column-inner .career__imges-wrapper .career__imges {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
-
-.section__career .two_column-inner .career__imges-wrapper .career__imges .career__imges-item {
-  width: calc((100% - (40px * 2)) / 2 - 1px);
-}
-
-.section__career .two_column-inner .career__imges-wrapper .career__imges .career__imges-item .career__imge {
-  width: 100%;
-  padding-top: 56%;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1.25em;
-}
-
-.section__career .two_column-inner .career__imges-wrapper .career__imges .career__imges-item .caption {
-  font-size: 0.875em;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 767px) {
-  .section__career {
-    padding: 90px 0;
-  }
-  .section__career .two_column-inner .section__ttl {
-    margin-bottom: 40px;
-  }
-  .section__career .two_column-inner .section__lead {
-    margin-bottom: 80px;
-  }
-  .section__career .two_column-inner .career_sub_ttl {
-    margin-bottom: 43px;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion {
-    padding: 26px 0;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion-header .career__accordion-switch {
-    padding-right: 20px;
-    right: 24px;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body {
-    padding-top: 34px;
-    width: 100%;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body:last-child {
-    margin-bottom: 0;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content-ttl {
-    margin-bottom: 4px;
-  }
-  .section__career .two_column-inner .career__accordion-items .career__accordion .career__accordion_body .career__content-unit .career__content .treatment-unit .treatment-ttl {
-    margin-bottom: 4px;
-  }
-  .section__career .two_column-inner .button-entry-wrapper {
-    margin: 57px auto 0;
-    display: grid;
-    justify-content: center;
-    place-items: center;
-  }
-  .section__career .two_column-inner .button-entry-wrapper #entry-btn-top.button-entry {
-    margin: 0;
-    width: 155px;
+    margin-bottom: 10px;
   }
 }
 
@@ -930,35 +973,17 @@ header .header__inner {
   position: relative;
   display: inline-block;
   margin: 15px 0;
-  width: 100%;
   background: #eee;
-  height: 35px;
+  height: 12px;
   border-radius: 3px;
   width: 100%;
-}
-
-.skillbar-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 110px;
-  font-weight: bold;
-  font-size: 13px;
-  color: #ffffff;
-  background: #6adcfa;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 0 20px;
-  height: 35px;
-  line-height: 35px;
 }
 
 .skillbar-bar {
-  height: 35px;
+  height: 12px;
   width: 0px;
-  background: #6adcfa;
-  border-radius: 3px;
+  background: #eb5b18;
+  border-radius: 20px;
   display: inline-block;
 }
 
@@ -966,9 +991,9 @@ header .header__inner {
   position: absolute;
   right: 10px;
   top: 0;
-  font-size: 11px;
-  height: 35px;
-  line-height: 35px;
+  font-size: 8px;
+  height: 12px;
+  line-height: 12px;
   color: #ffffff;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -986,27 +1011,22 @@ header .header__inner {
 }
 
 .section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper {
-  width: 50%;
+  width: 100%;
 }
 
 .section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper .section__ttl {
   margin-bottom: 40px;
 }
 
-.section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper .section__lead {
-  margin-bottom: 80px;
-}
-
-.section__skills .two_column-inner .skills__item-wrapper .skills__item-grph-wrapper {
-  width: 50%;
-  height: auto;
-}
-
 .section__skills .two_column-inner .skills__infos {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .section__skills .two_column-inner .skills__infos .skills__info {
+  height: auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   width: calc((100% - (40px * 1)) / 2 - 1px);
   margin-bottom: 80px;
@@ -1034,13 +1054,32 @@ header .header__inner {
 }
 
 .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch {
-  margin: 0 auto;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  width: 100%;
   display: block;
-  width: 12px;
-  height: 6px;
-  background-color: red;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch:hover {
+  opacity: 0.5;
+}
+
+.section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch span {
+  transition: all 0.4s;
+  position: absolute;
+  left: 0;
+}
+
+.section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch span.is-active {
+  transform: rotate(90deg);
+}
+
+.section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch p {
+  padding-left: 20px;
+  font-style: italic;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  font-size: 0.75em;
 }
 
 .section__skills .two_column-inner .skills__infos .skills__info .skill__info-body {
@@ -1070,37 +1109,75 @@ header .header__inner {
     justify-content: space-between;
   }
   .section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper {
-    width: 50%;
+    width: 100%;
   }
   .section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper .section__ttl {
     margin-bottom: 40px;
   }
   .section__skills .two_column-inner .skills__item-wrapper .section__ttl-wrapper .section__lead {
-    margin-bottom: 80px;
-  }
-  .section__skills .two_column-inner .skills__item-wrapper .skills__item-grph-wrapper {
-    width: 50%;
-    height: auto;
+    margin-bottom: 0;
   }
   .section__skills .two_column-inner .skills__infos {
-    width: 50%;
+    max-width: 560px;
+    flex-wrap: wrap;
+    align-items: center;
   }
   .section__skills .two_column-inner .skills__infos .skills__info {
-    max-width: 420px;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 24px 16px;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info:nth-child(n + 3) {
     width: 100%;
   }
   .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skills__info-ttl {
     font-size: 1.5em;
-    margin-bottom: 8px;
+    margin-bottom: 1.25em;
   }
   .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill_rating {
     color: #eb5b18;
     font-size: 0.875em;
-    margin-top: 1.25em;
+    margin-bottom: 1.25em;
   }
   .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skills__info-desc {
     font-size: 0.75em;
-    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch:hover {
+    opacity: 0.5;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch span {
+    transition: all 0.4s;
+    position: absolute;
+    left: 0;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch span.is-active {
+    transform: rotate(90deg);
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skills__info-header .skill__info-switch p {
+    padding-left: 20px;
+    font-style: italic;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    font-size: 0.75em;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skill__info-body {
+    padding: 10px 0 0;
+    display: none;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skill__info-body .skill__info-subTtl {
+    font-size: 0.875em;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .section__skills .two_column-inner .skills__infos .skills__info .skill__info-body .skills__info-desc {
+    font-size: 0.75em;
   }
 }
 
@@ -1147,8 +1224,9 @@ footer .copyright {
     margin-bottom: 33px;
     margin-right: 0;
   }
-  footer .footer__contents-wrapper p.copyright {
+  footer .copyright {
     width: 100%;
+    text-align: center;
   }
 }
 
@@ -1162,42 +1240,46 @@ footer .copyright {
   margin-bottom: 34px;
 }
 
-.entry .entry-content .entry-tmb {
+.entry .entry-tmb {
   margin-bottom: 34px;
 }
 
-.entry .entry-content .entry-tmb img {
+.entry .entry-tmb img {
   width: 100%;
   height: auto;
 }
 
-.entry .entry-content .entry-category-child {
-  margin-bottom: 10px;
-}
-
-.entry .entry-content .entry-ttl {
+.entry .entry-ttl {
   margin-bottom: 36px;
   line-height: 1.4;
 }
 
-.entry .entry-content .launch-date {
+.entry .entry-body {
   margin-bottom: 26px;
 }
 
-.entry .entry-content .entry-body {
-  margin-bottom: 26px;
-}
-
-.entry .entry-content .entry-body p {
+.entry .entry-body p {
   margin-bottom: 36px;
 }
 
-.entry .entry-content .entry-body p:last-child {
+.entry .entry-body p:last-child {
   margin-bottom: 0;
 }
 
-.entry .entry-content .external-link {
-  margin-bottom: 64px;
+.entry .entry-body .pf-table {
+  width: 100%;
+  border: solid #000;
+  border-width: 1px 0 1px 0;
+  border-collapse: unset;
+}
+
+.entry .entry-body .pf-table .ttl {
+  width: 180px;
+  padding: 1em;
+}
+
+.entry .entry-body .pf-table .desc {
+  padding: 1em;
 }
 
 @media screen and (max-width: 767px) {
@@ -1215,6 +1297,19 @@ footer .copyright {
   }
   .entry .entry-content .entry-ttl {
     margin-bottom: 46px;
+  }
+  .entry .entry-content .entry-body .pf-table {
+    width: 100%;
+    border: solid #000;
+    border-width: 1px 0 1px 0;
+    border-collapse: unset;
+  }
+  .entry .entry-content .entry-body .pf-table .ttl {
+    width: 180px;
+    padding: 0.875em 0;
+  }
+  .entry .entry-content .entry-body .pf-table .desc {
+    padding: 0.875em 0;
   }
 }
 
@@ -1370,7 +1465,7 @@ div.input-confirmation-wrapper dl.input-confirmation dt.input-confirmation-ttl {
   display: none !important;
 }
 
-div.wpcf7 .ajax-loader {
+.wpcf7 .ajax-loader {
   display: none !important;
 }
 

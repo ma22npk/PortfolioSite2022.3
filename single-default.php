@@ -56,7 +56,6 @@
             ?>
           </div>
         </article>
-
         <div class="pagenation__btn-wrapper">
           <!-- 以前の記事があったら -->
           <?php if ($prev_post) : ?>

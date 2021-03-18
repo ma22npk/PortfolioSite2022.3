@@ -13,6 +13,11 @@
 ラベルボタンにフォームのパーツ単位など
 UI の最小要素をスタイライズします。
  ================================== */
+img[src*=".svg"] {
+  width: 100%;
+  height: auto;
+}
+
 body {
   font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
   background: #fff;
@@ -156,7 +161,7 @@ br.br-sp {
 }
 
 .btn-map,
-#btn-more-csr,
+#btn-more-pf,
 #contact_us-btn-top,
 .btn-more-br,
 #entry-btn-top,
@@ -183,7 +188,7 @@ br.br-sp {
 }
 
 .btn-map:hover,
-#btn-more-csr:hover,
+#btn-more-pf:hover,
 #contact_us-btn-top:hover,
 .btn-more-br:hover,
 #entry-btn-top:hover,
@@ -227,7 +232,7 @@ br.br-sp {
 
 #btn-more-works,
 #btn-map,
-#btn-more-csr,
+#btn-more,
 .btn-more,
 .btn-more-br,
 #entry-btn-top.button-entry,
@@ -235,17 +240,19 @@ br.br-sp {
   display: grid;
   place-items: center;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
   font-style: italic;
 }
 
 #btn-map,
 #btn-more-works,
-#btn-more-csr {
+#btn-more-pf {
   width: 56px;
   height: 22px;
   font-size: 0.875em;
   letter-spacing: 0.05em;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 #btn-map {
@@ -275,7 +282,7 @@ br.br-sp {
 }
 
 .aside__lists a {
-  font-size: 1.625em;
+  font-size: 1.25em;
   font-family: "garamond", sans-serif;
 }
 
@@ -285,46 +292,281 @@ aside.sidebar-right {
 }
 
 /* MV ==============================*/
-/* ポートフォリオ =========================*/
-.section__portfolio {
-  background-color: #fff;
+.section__mv {
+  background-color: #ffff;
+}
+
+.section__mv .mv__container {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.section__mv .mv__container .mv__catch {
+  font-size: 1.5em;
+  color: #000;
 }
 
 @media screen and (max-width: 767px) {
-  .section__portfolio {
-    background-color: #fff;
+  .section__mv .mv__container {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .section__mv .mv__container .mv__catch {
+    font-size: 1em;
+    color: #000;
   }
 }
 
-.card-ttl {
-  font-size: 1.375em;
-  font-family: "garamond", sans-serif;
+/* プロフィール ---------------------------*/
+#top-profile.section__profile {
+  background-color: #fff;
+}
+
+#top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__sns-wrapper .profile__sns {
+  font-size: 1.5em;
+  color: #eb5b18;
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .resume__ttl {
+  padding-left: 35px;
+  position: relative;
+  font-size: 1.25em;
+  line-height: 1.6;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .resume__ttl::before {
+  display: block;
+  width: 24px;
+  height: 1px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background-color: #000;
+  content: "";
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .resume__data {
+  font-size: 0.875em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .resume__data .lead {
+  margin-bottom: 10px;
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl {
+  font-size: 1.25em;
+  line-height: 1.6;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 35px;
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl::before {
+  display: block;
+  width: 24px;
+  height: 1px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background-color: #000;
+  content: "";
+}
+
+#top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-desc {
+  font-size: 0.875em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+  #top-profile.section__profile .two_column-inner .profile__container .profile__img-wrapper .profile__sns-wrapper .profile__sns {
+    font-size: 2em;
+    color: #000;
+  }
+  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info-ttl {
+    font-size: 1.25em;
+    line-height: 1.6;
+    font-weight: bold;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  }
+  #top-profile.section__profile .two_column-inner .profile__container .profile__infos .profile__info .profile__info_desc .info_desc-primary {
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    line-height: 1.6;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .resume__ttl {
+    font-size: 1.25em;
+    line-height: 1.6;
+    font-weight: bold;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 35px;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .resume__ttl::before {
+    display: block;
+    width: 24px;
+    height: 1px;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    background-color: #000;
+    content: "";
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .resume__data {
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    line-height: 1.6;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl {
+    font-size: 1.25em;
+    line-height: 1.6;
+    font-weight: bold;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 35px;
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-ttl::before {
+    display: block;
+    width: 24px;
+    height: 1px;
+    position: absolute;
+    top: 16px;
+    left: 0;
+    background-color: #000;
+    content: "";
+  }
+  #top-profile.section__profile .two_column-inner .profile__resume .future_visions .future_vision .future_vision-desc {
+    font-size: 0.875em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+    line-height: 1.6;
+  }
+}
+
+/* キャリアー ========================*/
+section.section__career {
+  background: #fff;
+  color: #000;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career .section__lead {
+  font-size: 0.8125em;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+section.section__career .career_sub_ttl {
+  font-size: 1.25em;
+  line-height: 1.6;
+  font-weight: bold;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 35px;
+}
+
+section.section__career .career_sub_ttl::before {
+  display: block;
+  width: 24px;
+  height: 1px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  background-color: #000;
+  content: "";
+}
+
+section.section__career div.career__accordion {
+  border-top: 1px #000 solid;
+  border-collapse: collapse;
+}
+
+section.section__career div.career__accordion:last-child {
+  border-bottom: 1px #000 solid;
+}
+
+section.section__career div.career__accordion .career__accordion-ttl {
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion .career__content-ttl {
+  font-size: 0.875em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion p.career__content-txt {
+  font-size: 0.875em;
+  line-height: 1.6;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+}
+
+section.section__career div.career__accordion .treatment-ttl {
+  font-size: 0.875em;
   font-weight: bold;
 }
 
-.card-desc > p {
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+section.section__career div.career__accordion .treatment-txt {
   font-size: 0.875em;
   line-height: 1.6;
-  letter-spacing: 0.05em;
 }
 
-/* ワークス ==========================*/
-section#top-works.section__pf {
-  color: #fff;
+@media screen and (max-width: 767px) {
+  section.section__career .career__accordion {
+    border-top: 1px #000 solid;
+    border-collapse: collapse;
+  }
+  section.section__career .career__accordion:last-child {
+    border-bottom: 1px #000 solid;
+  }
+  section.section__career .career__accordion .career__accordion-ttl {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
+  }
+  section.section__career .career__accordion .career__content-unit .career__content-ttl {
+    font-size: 0.8125em;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+  section.section__career .career__accordion .career__content-unit .career__content-txt {
+    display: inline-block;
+    font-size: 0.8125em;
+    line-height: 1.6;
+  }
+  section.section__career .career__accordion .treatment-unit .treatment-ttl {
+    font-size: 0.8125em;
+    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  section.section__career .career__accordion .treatment-unit .treatment-txt {
+    font-size: 0.8125em;
+    line-height: 1.6;
+  }
+}
+
+/* ポートフォリオ =========================*/
+.section__pf {
   background: #000;
-}
-
-section#top-works.section__pf .info-wrapper-pc {
   color: #fff;
 }
 
-section#top-works.section__pf .info-wrapper-pc .info-category {
-  color: #fff;
-}
-
-section#top-works.section__pf .info-wrapper-pc .info-ttl {
-  color: #fff;
+.section__pf .info-wrapper-pc {
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .slider__btn-wrapper {
@@ -366,35 +608,6 @@ section#top-works.section__pf .info-wrapper-pc .info-ttl {
   color: #000;
 }
 
-section#top-works {
-  color: #fff;
-}
-
-section#top-works div a {
-  color: #fff;
-}
-
-section#top-works div a:link {
-  color: #fff;
-}
-
-section#top-csr {
-  color: #000;
-}
-
-section#top-csr div a {
-  color: #000;
-}
-
-section#top-csr div a:link {
-  color: #000;
-}
-
-.info-wrapper-pc {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.9);
-}
-
 .info-wrapper-pc .info-category {
   font-size: 1.375em;
   font-weight: bold;
@@ -421,8 +634,7 @@ section#top-csr div a:link {
   }
 }
 
-section#top-works div.info-wrapper-pc div a,
-section#top-csr div.info-wrapper-pc div a {
+.info-wrapper-pc div a {
   text-align: right;
   font-size: 1.375em;
   font-family: "garamond", sans-serif;
@@ -430,12 +642,22 @@ section#top-csr div.info-wrapper-pc div a {
 
 /* ニュース ==========================*/
 .section__news {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
-.section__news:link {
-  color: #fff;
+.section__news .top_news-link {
+  cursor: pointer;
+  transition: all 0.4s;
+  color: #000;
+}
+
+.section__news .top_news-link:link {
+  color: #000;
+}
+
+.section__news .top_news-link:hover {
+  opacity: 0.5;
 }
 
 .section__news .news__item-date {
@@ -523,106 +745,11 @@ section.section__profile .info_desc-secondary {
   }
 }
 
-/* リクルート ========================*/
-.section__lead {
-  font-size: 0.8125em;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-section.section__career {
-  background-color: #000;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  color: #fff;
-}
-
-section.section__career h3.career_sub_ttl {
-  font-size: 1.25em;
-  font-weight: bold;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-}
-
-section.section__career div.career__accordion {
-  border-top: 1px #fff solid;
-  border-collapse: collapse;
-}
-
-section.section__career div.career__accordion:last-child {
-  border-bottom: 1px #fff solid;
-}
-
-section.section__career div.career__accordion .career__accordion-ttl {
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-}
-
-section.section__career div.career__accordion .career__content-ttl {
-  font-size: 0.875em;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-}
-
-section.section__career div.career__accordion p.career__content-txt {
-  font-size: 0.875em;
-  line-height: 1.6;
-  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-}
-
-section.section__career div.career__accordion .treatment-ttl {
-  font-size: 0.875em;
-  font-weight: bold;
-}
-
-section.section__career div.career__accordion .treatment-txt {
-  font-size: 0.875em;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 767px) {
-  section.section__career .career_sub_ttl {
-    font-size: 1.25em;
-    font-weight: bold;
-  }
-  section.section__career .career__accordion {
-    border-top: 1px #000 solid;
-    border-collapse: collapse;
-  }
-  section.section__career .career__accordion:last-child {
-    border-bottom: 1px #000 solid;
-  }
-  section.section__career .career__accordion .career__accordion-ttl {
-    font-size: 1em;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  }
-  section.section__career .career__accordion .career__content-unit .career__content-ttl {
-    font-size: 0.8125em;
-    font-weight: 500;
-    margin-bottom: 4px;
-    letter-spacing: 0.05em;
-  }
-  section.section__career .career__accordion .career__content-unit .career__content-txt {
-    display: inline-block;
-    font-size: 0.8125em;
-    line-height: 1.6;
-  }
-  section.section__career .career__accordion .treatment-unit .treatment-ttl {
-    font-size: 0.8125em;
-    font-weight: bold;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-  }
-  section.section__career .career__accordion .treatment-unit .treatment-txt {
-    font-size: 0.8125em;
-    line-height: 1.6;
-  }
-}
-
 /* コンタクト ========================*/
+.section__skills {
+  background-color: white;
+}
+
 .section__skills .skills__info-ttl {
   font-size: 1.375em;
   font-family: "garamond", sans-serif;
@@ -688,8 +815,7 @@ img#footer__logo {
 /* 投稿ページ用  */
 .entry-category-parent {
   font-size: 40px;
-  font-weight: bold;
-  font-family: "DIN Condensed", sans-serif;
+  font-family: "garamond", sans-serif;
   margin-bottom: 28px;
 }
 
@@ -838,48 +964,21 @@ img.attachment-large.size-large.wp-post-image {
   height: auto;
 }
 
-/* WORKS投稿記事用 ==========================*/
-.entry-category-child {
-  font-family: "garamond", sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-h1.entry-ttl {
+/* 実績投稿記事用 ==========================*/
+.entry-ttl {
   font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 2em;
 }
 
-p.launch-date {
-  font-size: 0.875em;
-  font-weight: bold;
-  font-family: "garamond", sans-serif;
+.pf-table td {
+  font-size: 1em;
+  font-family: "Yu Mincho Demibold", "YuMincho Demibold", sans-serif;
 }
 
 @media screen and (max-width: 767px) {
-  p.launch-date {
+  .pf-table {
     font-size: 0.875em;
   }
-}
-
-.external-link {
-  text-align: right;
-  font-weight: bold;
-  font-size: 0.9375em;
-  font-family: "garamond", sans-serif;
-}
-
-.external-link a {
-  text-align: right;
-  font-weight: bold;
-  font-size: 0.9375em;
-  font-family: "garamond", sans-serif;
-  color: #000;
-}
-
-.external-link a:link {
-  color: #000;
 }
 
 /* コンタクトフォームページ用 --------------------*/

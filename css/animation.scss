@@ -16,7 +16,6 @@
   filter: invert(12%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
 }
 
-
 // スクロールのトランジション
 .lazyload {
   transition-duration: 1200ms;
@@ -48,17 +47,7 @@
 .slide-up.before-load > * {
   transform: translate(0, 100%);
 }
-.top_news-link {
-  cursor: pointer;
-  color: $color-white;
-  transition: all 0.4s;
-  &:link {
-    color: $color-white;
-  }
-  &:hover {
-    color: gray;
-  }
-}
+
 
 #header__logo-top {
   transition: all 0.4s;
@@ -114,13 +103,51 @@
   bottom: 0;
   display: none;
   place-items: center;
+  opacity: 0;
   background: $bg_c-white;
-}
-.mask-lorder.is-show {
-  display: grid;
-  opacity: 0.9;
+  &.is-show {
+    display: grid;
+    opacity: 0.9;
+  }
 }
 
+// ローダー(トップ画面用)
+.top__mask-lorder {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  place-items: center;
+  opacity: 1;
+  background: $bg_c-white;
+}
+
+.top__mask-lorder {
+  opacity: 0;
+  transform: translateX(-20px);
+  &.is-hidden {
+    animation: maskFadeOut 10.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+  }
+}
+
+@keyframes maskFadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+
+// ローディングアニメーション
 .radar-spinner,
 .radar-spinner * {
   box-sizing: border-box;

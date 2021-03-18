@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
 @font-face {
   font-family: garamond;
   src: url("garamond.ttf");
@@ -542,13 +545,13 @@ li.profile__info {
   height: 2px;
   width: 14px;
   border-radius: 3px;
-  background-color: #fff;
+  background-color: #000;
   position: absolute;
   transition: all 0.2s;
 }
 
 .career__accordion-switch span {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
 }
 
 .career__accordion-switch span:after {

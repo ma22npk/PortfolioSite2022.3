@@ -53,20 +53,6 @@
   transform: translate(0, 100%);
 }
 
-.top_news-link {
-  cursor: pointer;
-  color: #fff;
-  transition: all 0.4s;
-}
-
-.top_news-link:link {
-  color: #fff;
-}
-
-.top_news-link:hover {
-  color: gray;
-}
-
 #header__logo-top {
   transition: all 0.4s;
   transform-origin: left center;
@@ -116,12 +102,47 @@
   bottom: 0;
   display: none;
   place-items: center;
+  opacity: 0;
   background: #ffff;
 }
 
 .mask-lorder.is-show {
   display: grid;
   opacity: 0.9;
+}
+
+.top__mask-lorder {
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  place-items: center;
+  opacity: 1;
+  background: #ffff;
+}
+
+.top__mask-lorder {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.top__mask-lorder.is-hidden {
+  animation: maskFadeOut 10.2s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
+}
+
+@keyframes maskFadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
 
 .radar-spinner,

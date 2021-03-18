@@ -4,24 +4,25 @@ Template Name: top
 */
 ?>
 <!-- ヘッダーPHP -->
-<?php get_header('top'); ?>
-<!-- サイドバーPHP -->
+<?php get_header('dev'); ?>
+<!-- トップページサイドバー -->
 <?php get_template_part('sidebar/sidebar-top'); ?>
 <!-- スクロールを促す矢印 -->
 <?php get_template_part('template-parts/scrollarrowtop'); ?>
 
 <!-- [START] MV-->
 <section id="top-mv" class="section__mv block" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/top_bg3.png);">
-  <!--  -->
-  <div class="mv__container">
+  <div class="mv__container is-load">
     <h1 class="mv__ttl">
-      K.Matsumoto<br>
-      PORTFOLIO SITE
+      <?php get_template_part('template-parts/mvlogo'); ?>
     </h1>
+    <p class="mv__catch">
+      お忙しい中ご覧いただきありがとうございます。<br>
+      ぜひ、最後まで見ていただけると嬉しいです。
+    </p>
   </div>
 </section>
 <!-- [END] MV-->
-
 <!-- [START]プロフィールセクション -->
 <section id="top-profile" class="section__profile block">
   <div class="two_column-inner">
@@ -53,12 +54,12 @@ Template Name: top
             <div class="profile__info-ttl">名前</div>
             <div class="profile__info_desc">
               <p class="info_desc-primary">
-                松本 昂大 (まつもと こうた)
+                松本 昂大 ( まつもと こうた )
               </p>
             </div>
           </li>
           <!-- 誕生日 -->
-          <li class="profile__info profile__info-location">
+          <li class="profile__info">
             <div class="profile__info-ttl">生年月日</div>
             <div class="profile__info_desc">
               <p class="info_desc-primary">
@@ -67,7 +68,7 @@ Template Name: top
             </div>
           </li>
           <!-- 血液型 -->
-          <li class="profile__info profile__info-location">
+          <li class="profile__info">
             <div class="profile__info-ttl">血液型</div>
             <div class="profile__info_desc">
               <p class="info_desc-primary">
@@ -76,7 +77,7 @@ Template Name: top
             </div>
           </li>
           <!-- 出身地 -->
-          <li class="profile__info profile__info-location">
+          <li class="profile__info">
             <div class="profile__info-ttl">出身地</div>
             <div class="profile__info_desc">
               <p class="info_desc-primary">
@@ -85,7 +86,7 @@ Template Name: top
             </div>
           </li>
           <!-- 居住地 -->
-          <li class="profile__info profile__info-location">
+          <li class="profile__info">
             <div class="profile__info-ttl">居住地</div>
             <div class="profile__info_desc">
               <p class="info_desc-primary">
@@ -93,29 +94,34 @@ Template Name: top
               </p>
             </div>
           </li>
-          <!-- 身長 -->
-          <!-- <li class="profile__info">
-          <div class="profile__info-ttl">身長</div>
-          <div class="profile__info_desc">
-            <p class="info_desc-primary">170cm</p>
-          </div>
-        </li> -->
+          <!-- 学習言語 -->
+          <li class="profile__info">
+            <div class="profile__info-ttl">学習言語</div>
+            <div class="profile__info_desc">
+              <p class="info_desc-primary">
+                Sass, HTML, CSS, JavaScript ,Java, SQL
+              </p>
+            </div>
+          </li>
           <!-- 体重 -->
-          <!-- <li class="profile__info">
-          <div class="profile__info-ttl">体重</div>
-          <div class="profile__info_desc">
-            <p class="info_desc-primary">
-              78kg
-            </p>
-          </div>
-        </li> -->
-          <!-- 足のサイズ -->
-          <!-- <li class="profile__info">
-          <div class="profile__info-ttl">足のサイズ</div>
-          <div class="profile__info_desc">
-            <p class="info_desc-primary">26.5cm</p>
-          </div>
-        </li> -->
+          <li class="profile__info">
+            <div class="profile__info-ttl">FW
+            </div>
+            <div class="profile__info_desc">
+              <p class="info_desc-primary">
+                jQuery, Vue.js, Bootstrap, WordPress
+              </p>
+            </div>
+          </li>
+          <!-- ツール -->
+          <li class="profile__info">
+            <div class="profile__info-ttl">ツール</div>
+            <div class="profile__info_desc">
+              <p class="info_desc-primary">
+                Git, AdobeXD, Slack, Backlog, ChatWork, Trello等
+              </p>
+            </div>
+          </li>
           <!-- 特技 -->
           <li class="profile__info">
             <div class="profile__info-ttl">特技</div>
@@ -195,8 +201,8 @@ Template Name: top
               </p>
               <p class="future_vision-desc" data-fadeIn-b>
                 クライアントにより多く質の良い価値をを提供出来る人材になりたいと考えています。<br>
-                理由は、私が初めてWeb制作のお仕事をした際、自身の技術力の低さから全ての要件に応えきれず、ディレクターにカバーしてもらった事がとても悔しかったからです。<br>
-                私はその経験から、自身の成長より成果の質と量に拘るように反省し、かつ高い技能をつけたいと強く思いました。<br>
+                理由は、私が初めてWeb制作のお仕事をした際、自身の技術力の低さから納期に間に合わせることに精一杯になってしまた経験がとても悔しかったからです。<br>
+                私はその経験から、自身の成長より成果の質と提案の量に拘るように反省し、そのために高い技能をつけたいと強く思いました。<br>
                 そのため、普段の業務ではコミュニケーション能力とタスク管理能力向上に重きを置いて携わりつつ、勉強会や自身のブログでのアウトプットを通じて技術のキャッチアップをしていきます。
               </p>
             </li>
@@ -205,14 +211,13 @@ Template Name: top
                 長期的な目標
               </p>
               <p class="future_vision-desc" data-fadeIn-b>
-                3年以内を目処にマネジメント方面に進み、個人の限界を超えた価値を生みたい考えております。
-                それまではプレイヤーとしての実力向上を優先し、メンバーからの信頼を構築していきます。
+                3年以内を目処にマネジメント方面に進み、個人の限界を超えた価値を生みたい考えております。<br>
+                そのためには、高いレベルのビジネスの感性が不可欠だと考えており、ヒューマンスキルだけでなくマーケティングの感性も磨き、「あなたに頼んでよかった！」と言われる人材を目指します。<br>
                 また、新しいノウハウを生むことや仕組みを考えることに強い興味を持っているため、新たな自社サービスの立ち上げと運用に携わり、成果を挙げることが目標です。
               </p>
             </li>
           </ul>
         </dl>
-
       </ul>
       <!-- [END]レジュメ -->
     </div>
@@ -220,46 +225,42 @@ Template Name: top
   </div>
 </section>
 <!-- [END]プロフィールセクション -->
-
-
 <!-- [START]キャリアセクション -->
-<section id="top-career" class="section__career block" area>
+<section id="top-career" class="section__career block">
   <!-- [START]２カラムのインナー -->
   <div class="two_column-inner">
     <!-- [START]要素のチャンク -->
     <div chunk>
-      <h2 class="section__ttl" bg-hidden-bl>Career</h2>
+      <h2 class="section__ttl" bg-hidden>Career</h2>
       <p class="section__lead" data-fadeIn>私の経歴です。<br>
         学生時代に「先輩と飲食店を経営する」ことを夢見て調理師を志し、2016年に夢が叶えることができました。<br>
         現在は「コロナ禍で苦しむ仲間たちを助けるような人材になりたい」と考え、転職活動をしております。
       </p>
       <!-- [START]前職の写真エリア -->
-      <div class="career__imges-wrapper">
-        <ul class="career__imges">
-          <!-- [START]キャリアの写真 -->
-          <li class="career__imges-item">
-            <div class="career__imge" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/career_balling.png)" data-fadeIn-l></div>
-            <span class="caption" data-fadeIn>
-              社内ボーリング大会中にサプライズで誕生日のお祝いをしてもらいました。
-            </span>
-          </li>
-          <!-- [END]キャリアの写真 -->
-          <!-- [START]キャリアの写真 -->
-          <li class="career__imges-item">
-            <div class="career__imge" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/nishika_seiki.png)" data-fadeIn-l></div>
-            <span class="caption" data-fadeIn>
-              ずっとお店を支えてくれたスタッフの送別会です。<br>
-              コロナ禍で大きな打撃を受けている業界にも影響を与えるエンジニアになりたいと考えています。
-            </span>
-          </li>
-          <!-- [END]キャリアの写真 -->
-        </ul>
-      </div>
+      <ul class="career__imges">
+        <!-- [START]キャリアの写真 -->
+        <li class="career__imges-item">
+          <div class="career__imge" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/career_balling.png)" data-fadeIn-l></div>
+          <span class="caption" data-fadeIn>
+            社内ボーリング大会中にサプライズで誕生日のお祝いをしてもらいました。
+          </span>
+        </li>
+        <!-- [END]キャリアの写真 -->
+        <!-- [START]キャリアの写真 -->
+        <li class="career__imges-item">
+          <div class="career__imge" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/nishika_seiki.png)" data-fadeIn-l></div>
+          <span class="caption" data-fadeIn>
+            ずっとお店を支えてくれたスタッフの送別会です。<br>
+            コロナ禍で大きな打撃を受けている業界にも影響を与えるエンジニアになりたいと考えています。
+          </span>
+        </li>
+        <!-- [END]キャリアの写真 -->
+      </ul>
     </div>
     <!-- [END]前職の写真エリア -->
     <!-- [START]要素のチャンク -->
     <div chunk>
-      <h3 class="career_sub_ttl" bg-hidden-bl>職歴</h3>
+      <h3 class="career_sub_ttl" bg-hidden>職歴</h3>
       <!-- [START]募集要項のアコーディオンの集まり -->
       <div class="career__accordion-items">
         <?php $args = array(
@@ -346,88 +347,136 @@ Template Name: top
       </div>
       <!-- [END]募集要項のアコーディオンの集まり -->
     </div>
-  </div>
-  <!-- [END]要素のチャンク -->
-
+    <!-- [END]要素のチャンク -->
   </div>
   <!-- [END]２カラムのインナー -->
-</section <!-- [END]キャリアセクション -->
+</section>
+<!-- [END]キャリアセクション -->
 
 <!-- [START]ポートフォリオセクション -->
-<section id="top-pf" class="section__pf" chunk>
+<section id="top-pf" class="section__pf">
   <div class="two_column-inner">
-    <!-- [START]csrのタイトルとスライダーボタンのセットのエリア -->
-    <div class="slider__section__ttl-area">
-      <h2 class="section__ttl" bg-hidden>Portfolio</h2>
-      <!-- [START]スライダーボタン -->
-      <div class="slider__btn-wrapper csr_slider-btn-wrapper" data-fadeIn-b>
-        <!-- プレビューボタン -->
-        <!-- ネクストボタン -->
+    <!-- [START]要素のチャンク -->
+    <div chunk>
+      <!-- [START]csrのタイトルとスライダーボタンのセットのエリア -->
+      <div class="slider__section__ttl-area">
+        <h2 class="section__ttl" bg-hidden-bl>Portfolio</h2>
+        <!-- [START]スライダーボタン -->
+        <div class="slider__btn-wrapper csr_slider-btn-wrapper" data-fadeIn-b>
+          <!-- プレビューボタン -->
+          <!-- ネクストボタン -->
+        </div>
+        <!-- [END]スライダーボタン -->
       </div>
-      <!-- [END]スライダーボタン -->
+      <!-- [END]csrのタイトルとスライダーボタンのセットのエリア -->
+      <p class="section__lead" data-fadeIn>
+        私が過去に製作したポートフォリオです。<br>
+        家族や仲間の役に立つものを作りたいと考え、Web制作を中心にアプリ開発やデザインなども挑戦してきました。
+      </p>
+      <!-- [START]スライダー -->
+      <ul class="slider csr_slider" data-fadeIn-b>
+        <?php $args = array(
+          // 'numberposts' => 7, //表示したい記事の数
+          'post_type' => 'create-website' //カスタム投稿で作成した投稿タイプ
+        );
+        $customPosts = get_posts($args);
+        if ($customPosts) : foreach ($customPosts as $post) : setup_postdata($post);
+        ?>Gunjoo64
+            <!-- [START]スライダーアイテム -->
+            <li>
+              <div class="slider_list-inner">
+                <!-- [START]サムネイル -->
+                <div class="slide_tmb">
+                  <div class="slide_tmb-mask">
+                  </div>
+                  <div class="background-image" style="background-image: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>)">
+                  </div>
+                </div>
+                <!-- [END]サムネイル -->
+                <!-- [START]PC画面のcsrの情報表示エリア -->
+                <div class="info-wrapper-pc">
+                  <p class="info-category">
+                    <?php
+                    $terms = get_the_terms($post->ID, 'portfolio');
+                    if ($terms) {
+                      echo $terms[0]->name;
+                    }
+                    ?>
+                  </p>
+                  <h3 class="info-ttl">
+                    <?php the_title(); //タイトルを表示
+                    ?>
+                  </h3>
+                  <a href="<?php the_permalink(); //記事のリンクを表示
+                      ?>" id="btn-more-pf" class="btn-more-br btn-more">
+                    MORE
+                  </a>
+                </div>
+                <!-- [END]PC画面のcsrの情報 -->
+                <!-- [START]csrの情報表示エリア -->
+              </div>
+            </li>
+            <!-- [END]スライダーアイテム -->
+          <?php endforeach; ?>
+        <?php else : //記事が無い場合
+        ?>
+          <p>カスタム投稿記事がありません。</p>
+        <?php endif;
+        wp_reset_postdata(); //クエリのリセット
+        ?>
+      </ul>
+      <!-- [END]スライダー -->
     </div>
-    <!-- [END]csrのタイトルとスライダーボタンのセットのエリア -->
-    <p class="section__lead" data-fadeIn>
-      私が過去に製作したポートフォリオです。<br>
-      家族や仲間の役に立つものを作りたいと考え、Web制作を中心にアプリ開発やデザインなども挑戦してきました。
-    </p>
-    <!-- [START]スライダー -->
-    <ul class="slider csr_slider" data-fadeIn-b>
-      <?php $args = array(
-        // 'numberposts' => 7, //表示したい記事の数
-        'post_type' => 'portfolio' //カスタム投稿で作成した投稿タイプ
-      );
-      $customPosts = get_posts($args);
-      if ($customPosts) : foreach ($customPosts as $post) : setup_postdata($post);
-      ?>
-          <!-- [START]スライダーアイテム -->
-          <li>
-            <div class="slider_list-inner">
-              <!-- [START]サムネイル -->
-              <div class="slide_tmb">
-                <div class="slide_tmb-mask">
-                </div>
-                <div class="background-image" style="background-image: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>)">
-                </div>
-              </div>
-              <!-- [END]サムネイル -->
-              <!-- [START]PC画面のcsrの情報表示エリア -->
-              <div class="info-wrapper-pc">
-                <p class="info-category">
-                  <?php
-                  $terms = get_the_terms($post->ID, 'portfolio');
-                  if ($terms) {
-                    echo $terms[0]->name;
-                  }
-                  ?>
-                </p>
-                <h3 class="info-ttl">
-                  <?php the_title(); //タイトルを表示
-                  ?>
-                </h3>
-              </div>
-              <!-- [END]PC画面のcsrの情報 -->
-              <!-- [START]csrの情報表示エリア -->
-            </div>
-          </li>
-          <!-- [END]スライダーアイテム -->
-        <?php endforeach; ?>
-      <?php else : //記事が無い場合
-      ?>
-        <p>カスタム投稿記事がありません。</p>
-      <?php endif;
-      wp_reset_postdata(); //クエリのリセット
-      ?>
-    </ul>
-    <!-- [END]スライダー -->
+    <!-- [END]要素のチャンク -->
   </div>
 </section>
 <!-- [END]ポートフォリオセクション -->
 
+<!-- [START]ポートフォリオ(第２セクション) -->
+<section id="top-pf2" class="section__services block">
+  <!-- [START]インナー -->
+  <div class="two_column-inner slide-up before-load">
+
+    <div class="card-items">
+      <?php $posts = get_posts('numberposts=10&category=5');
+      global $post; ?>
+      <?php if ($posts) : foreach ($posts as $post) : setup_postdata($post); ?>
+          <!-- [START]カードアイテム -->
+          <div class="card">
+            <p class="card-tmb">
+              <?php
+              if (has_post_thumbnail()) {
+                // アイキャッチ画像が設定されてれば大サイズで表示
+                the_post_thumbnail('large');
+              } else {
+                // なければnoimage画像をデフォルトで表示
+                echo '<img src="' . esc_url(get_template_directory_uri()) . '/images/dummy_img_360x200.png" alt="FUSIONのサービス">';
+              }
+              ?>
+            </p>
+            <h2 class="card-ttl">
+              <?php the_title(); //タイトルを表示
+              ?>
+            </h2>
+            <div class="card-desc">
+              <?php
+              //本文の表示
+              the_content(); ?>
+            </div>
+          </div>
+          <!-- [END]カードアイテム -->
+      <?php endforeach;
+      endif; ?>
+    </div>
+  </div>
+  <!-- [END]インナー -->
+</section>
+<!-- [END]ポートフォリオ(第２セクション) -->
+
 <!-- [START] PastActivities(活動実績)セクション -->
-<section id="top-news" class="section__news block" chunk>
+<section id="top-activities" class="section__news block" chunk>
   <div class="two_column-inner">
-    <h2 class="section__ttl" bg-hidden bg-hidden-bl>Past Activities</h2>
+    <h2 class="section__ttl" bg-hidden bg-hidden>Activities</h2>
     <p class="section__lead" data-fadeIn>これまでの主な活動です。
       エンジニアを志てから積極的に勉強会に参加しております。<br>
       多くの失敗と絶望を経験しましたが、「見逃し三振より空振り三振」の精神でこれからも挑戦を続けて行こうと思います。
@@ -500,13 +549,13 @@ Template Name: top
       </div>
       <!-- [END]セクションタイトルラッパー -->
       <!-- [START]スキルグラフのラッパー -->
-      <div class="skills__item-grph-wrapper">
+      <!-- <div class="skills__item-grph-wrapper">
         <canvas id="myChart"></canvas>
-      </div>
+      </div> -->
       <!-- [END]スキルグラフのラッパー -->
     </div>
     <!-- [END]スキルの説明 -->
-    <ul class="skills__infos" chunk>
+    <ul class="skills__infos">
       <?php $args = array(
         'numberposts' => 10, //表示したい記事の数
         'post_type' => 'skills' //カスタム投稿で作成した投稿タイプ
@@ -516,33 +565,22 @@ Template Name: top
       ?>
           <!-- スキルアイテム -->
           <!-- [START]スキルアイテム -->
-          <dl class="skills__info" data-fadeIn-l>
+          <dl class="skills__info">
             <!-- [START]スキルアイテムヘッダー -->
             <dt class="skills__info-header">
               <div class="skills__info-ttl">
                 <?php the_title(); //スキル名を表示
                 ?>
               </div>
-
-              <div class="skillbar" data-percent="98">
-                <span class="skillbar-title" style="background: #d35400;">HTML5</span>
-                <p class="skillbar-bar" style="background: #e67e22;"></p>
-                <span class="skill-bar-percent"></span>
-              </div>
-              <!-- End Skill Bar -->
-
-
               <!-- [START]スキルバー -->
               <?php if (get_field('skill_rating')) : ?>
                 <div class="skill_rating skillbar" data-percent="<?php the_field('skill_rating'); ?>">
-                  <span class="skillbar-title" style="background: #2980b9;">Level</span>
-                  <p class="skillbar-bar" style="background: #3498db;"></p>
+                  <!-- <span class="skillbar-title" style="background: #2980b9;">Level</span> -->
+                  <p class="skillbar-bar"></p>
                   <span class="skill-bar-percent"></span>
                 </div>
               <?php endif; ?>
               <!-- [END]スキルバー -->
-
-
               <!-- [START]スキル説明 -->
               <?php if (get_field('skill_desc')) : ?>
                 <div class="skills__info-desc">
@@ -550,7 +588,9 @@ Template Name: top
                 </div>
               <?php endif; ?>
               <!-- [END]スキル説明 -->
-              <span class="skill__info-switch"></span>
+              <div class="skill__info-switch"><span><i class="fas fa-angle-double-right"></i></span>
+                <p>もっとみる</>
+              </div>
             </dt>
             <dd class="skill__info-body">
               <!-- [START]学習方法 -->

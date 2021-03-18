@@ -2,7 +2,12 @@
 // strictモードのコードは高速に実行することができる場合がある（JSエンジンによる最適化処理を困難にする誤りを修正するため
 ("use strict");
 {
+  // // トップページのローダー
+  $(window).on("load", function () {
+      $(".mv__container").addClass("is-load");
+  });
   /* ハンバーガーメニュー ==========================*/
+
   $(function () {
     $(
       ".btn-trigger,  .header-overlay, #top_sidebar_right-items > ul > li > a"
@@ -52,9 +57,14 @@
     ],
   });
 
-  //アコーディオン
+  //アコーディオン(キャリア)
   $(".career__accordion-header").on("click", function () {
     $(this).find(".career__accordion-switch").toggleClass("is-active");
+    $(this).next().slideToggle();
+  });
+  //アコーディオン（スキル）
+  $(".skills__info-header").on("click", function () {
+    $(this).find("span").toggleClass("is-active");
     $(this).next().slideToggle();
   });
 
@@ -95,7 +105,6 @@
     });
 
     // スクロールアローの挙動 ===========================
-
     // is-overは
     if ($(window).scrollTop() > 10) {
       //画面を少しスクロールしたら隠す
@@ -148,24 +157,6 @@
     });
   });
 
-  // $(window).scroll(function () {
-  //   // クラスを追加するwindowの位置を設定
-  //   var scrollTop = $(this).scrollTop();
-  //   var scrollBottom = scrollTop + $(this).height();
-  //   var effectPos = scrollBottom - 30;
-  //   $("[delay-show] li").css("opacity", "0");
-  //   // eachでliを順番に処理
-  //   $("[delay-show] li").each(function (i) {
-  //     if (effectPos > $(this).offset().top) {
-  //       var that = this;
-  //       // 0.2s毎にずれて表示
-  //       setTimeout(function () {
-  //         $(that).animate({ opacity: 1 }, 1500);
-  //       }, 200 * i);
-  //     }
-  //   });
-  // });
-
   $(function () {
     var secArr = new Array();
     var current = -1;
@@ -189,8 +180,6 @@
       if (secNum != current) {
         current = secNum;
         $("#menu-btn-top > span").css({ background: btnColorArray[current] });
-        // $('.sidebar-left-wrapper').css({display: displayArray[current]});
-        // $('.scroll__arrow-wrapper').css({display: arrowDisplayArray[current]});
       }
     }
     $(window).on("load scroll resize", function () {
@@ -212,11 +201,12 @@
     }
   });
 
-  $("#contact-btn-submit, #contact-btn-confirm").on("click", function () {
-    //ローダーを表示させ、２秒経ったらローダーを消す
-    jQuery("#lorder-mask").addClass("is-show");
-    setTimeout(endLoader, 2000);
-  });
+  // コンタクトフォームのローダー
+  // $("#contact-btn-submit, #contact-btn-confirm").on("click", function () {
+  //   //ローダーを表示させ、２秒経ったらローダーを消す
+  //   jQuery("#lorder-mask").addClass("is-show");
+  //   setTimeout(endLoader, 2000);
+  // });
 
   // ローダーを消す関数
   function endLoader() {

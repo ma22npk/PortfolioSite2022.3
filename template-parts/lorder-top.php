@@ -1,5 +1,5 @@
 <!-- [START]ローダー -->
-<div id="lorder-mask" class="mask-lorder">
+<div id="lorder-mask-top" class="top__mask-lorder">
   <div class="radar-spinner" :style="spinnerStyle">
     <div class="circle">
       <div class="circle-inner-container">

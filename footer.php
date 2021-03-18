@@ -19,16 +19,18 @@
       );
       ?>
     </div>
-    <div class="copyright">Copyright-松本昂大, 2020 All Rights Reserved</div>
+    <div class="copyright">Copyright-Kota Matsumoto, 2021 All Rights Reserved</div>
   </div>
 </footer>
 <!-- [END]フッター(黒) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
 <!-- functionPHPの読み込み -->
 <?php wp_footer(); ?>
+
 </body>
 
 </html>

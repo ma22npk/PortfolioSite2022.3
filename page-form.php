@@ -3,13 +3,10 @@
 Template Name: form
 */
 ?>
-
 <!-- ヘッダーPHP -->
 <?php get_header('ul'); ?>
-<!-- サイドバーPHP -->
-<?php get_sidebar('ul'); ?>
-<!-- ローダー -->
-<?php get_template_part('template-parts/lorder'); ?>
+<!-- トップページサイドバー -->
+<?php get_template_part('sidebar/sidebar-ul'); ?>
 
 <!-- [START]２カラムのインナー -->
 <div class="two_column-inner">
@@ -19,7 +16,7 @@ Template Name: form
     while (have_posts()) :
       the_post();
   ?>
-      <div class="entry page-form">
+      <article class="entry page-form">
         <div class="entry-category-parent">
           <?php the_title(); ?>
         </div>
@@ -44,17 +41,15 @@ Template Name: form
           </div>
         </article>
 
-      </div>
+      </article>
       <!-- [END]ページ -->
   <?php
     endwhile;
   endif;
   ?>
-
 </div>
 <!-- [END]２カラムのインナー -->
 
-
 <!-- [START]フッター（黒） -->
-<?php get_footer('br'); ?>
+<?php get_footer('ul'); ?>
 <!-- [END]フッター（黒） -->

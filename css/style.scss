@@ -6,6 +6,10 @@
 ラベルボタンにフォームのパーツ単位など
 UI の最小要素をスタイライズします。
  ================================== */
+img[src*=".svg"] {
+  width: 100%;
+  height: auto;
+}
 
 body {
   font-family: $font_family-MinchoB;
@@ -150,7 +154,7 @@ br.br-sp {
 }
 // 横からワイプするボタン（黒）
 .btn-map,
-#btn-more-csr,
+#btn-more-pf,
 #contact_us-btn-top,
 .btn-more-br,
 #entry-btn-top,
@@ -214,11 +218,10 @@ br.br-sp {
     border: solid 1px #fff;
   }
 }
-
 //エントリーボタン, コンタクトアスボタン モアボタン
 #btn-more-works,
 #btn-map,
-#btn-more-csr,
+#btn-more,
 .btn-more,
 .btn-more-br,
 #entry-btn-top.button-entry,
@@ -226,16 +229,18 @@ br.br-sp {
   display: grid;
   place-items: center;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
   font-style: italic;
 }
 #btn-map,
 #btn-more-works,
-#btn-more-csr {
+#btn-more-pf {
   width: 56px;
   height: 22px;
   font-size: $em-14px;
   letter-spacing: $letterSpacing-s;
+  display: grid;
+  place-items: center;
+  box-shadow: $boxShadowGooglePop;
 }
 #btn-map {
   width: 51px;
@@ -267,7 +272,7 @@ br.br-sp {
 //  サイドバーリスト
 .aside__lists {
   a {
-    font-size: $em-26px;
+    font-size: $em-20px;
     font-family: $font_family-brand;
   }
 }
@@ -278,48 +283,315 @@ aside.sidebar-right {
 }
 
 /* MV ==============================*/
-/* ポートフォリオ =========================*/
-.section__portfolio {
+.section__mv {
+  background-color: $bg_c-white;
+  .mv__container {
+    background-color: rgba(255, 255, 255, 0.8);
+    .mv__catch {
+      font-size: $em-24px;
+      color: $color-back;
+    }
+  }
+
+  @include mq-down() {
+    .mv__container {
+      background-color: rgba(255, 255, 255, 0.8);
+      .mv__catch {
+        font-size: $em-16px;
+        color: $color-back;
+      }
+    }
+  }
+}
+
+/* プロフィール ---------------------------*/
+#top-profile.section__profile {
   background-color: $bg_c-Base;
-  .section__ttl {
-  }
-  @include mq-down {
-    background-color: $bg_c-Base;
-    .section__ttl {
-
+  .two_column-inner {
+    .profile__container {
+      .profile__img-wrapper {
+        .profile__sns-wrapper {
+          .profile__sns {
+            font-size: $em-24px;
+            color: $color-accent;
+          }
+        }
+      }
     }
-    .card-item {
-
+    .profile__resume {
+      .resume__ttl {
+        padding-left: 35px;
+        position: relative;
+        font-size: $em-20px;
+        line-height: $lineHeight-s;
+        font-weight: bold;
+        font-family: $font_family-MinchoB;
+        &::before {
+          display: block;
+          width: 24px;
+          height: 1px;
+          position: absolute;
+          top: 16px;
+          left: 0;
+          background-color: $bg_c-black;
+          content: "";
+        }
+      }
+      .resume__data {
+        font-size: $em-14px;
+        font-family: $font_family-MinchoB;
+        line-height: $lineHeight-s;
+        .lead {
+          margin-bottom: 10px;
+        }
+      }
+      .future_visions {
+        .future_vision {
+          .future_vision-ttl {
+            font-size: $em-20px;
+            line-height: $lineHeight-s;
+            font-weight: bold;
+            font-family: $font_family-MinchoB;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 35px;
+            &::before {
+              display: block;
+              width: 24px;
+              height: 1px;
+              position: absolute;
+              top: 16px;
+              left: 0;
+              background-color: $bg_c-black;
+              content: "";
+            }
+          }
+          .future_vision-desc {
+            font-size: $em-14px;
+            font-family: $font_family-MinchoB;
+            line-height: $lineHeight-s;
+          }
+        }
+      }
+    }
+  }
+  @include mq-down() {
+    .two_column-inner {
+      .section__ttl {
+      }
+      .section__lead {
+      }
+      .profile__container {
+        .profile__img-wrapper {
+          .profile__avatar {
+          }
+          .profile__sns-wrapper {
+            .profile__sns {
+              font-size: $em-32px;
+              color: $color-black;
+              .fab.fa-github {
+              }
+              .fab.fa-twitter {
+              }
+              .fas.fa-blog {
+              }
+            }
+          }
+        }
+        .profile__infos {
+          .profile__info {
+            .profile__info-ttl {
+              font-size: $em-20px;
+              line-height: $lineHeight-s;
+              font-weight: bold;
+              font-family: $font_family-MinchoB;
+            }
+            .profile__info_desc {
+              .info_desc-primary {
+                font-size: $em-14px;
+                font-family: $font_family-MinchoB;
+                line-height: $lineHeight-s;
+              }
+            }
+          }
+        }
+      }
+      .profile__resume {
+        .resume__ttl {
+          font-size: $em-20px;
+          line-height: $lineHeight-s;
+          font-weight: bold;
+          font-family: $font_family-MinchoB;
+          margin-bottom: 24px;
+          position: relative;
+          padding-left: 35px;
+          &::before {
+            display: block;
+            width: 24px;
+            height: 1px;
+            position: absolute;
+            top: 16px;
+            left: 0;
+            background-color: $bg_c-black;
+            content: "";
+          }
+        }
+        .resume__data {
+          font-size: $em-14px;
+          font-family: $font_family-MinchoB;
+          line-height: $lineHeight-s;
+          .lead {
+          }
+        }
+        .future_visions {
+          .future_vision {
+            .future_vision-ttl {
+              font-size: $em-20px;
+              line-height: $lineHeight-s;
+              font-weight: bold;
+              font-family: $font_family-MinchoB;
+              margin-bottom: 24px;
+              position: relative;
+              padding-left: 35px;
+              &::before {
+                display: block;
+                width: 24px;
+                height: 1px;
+                position: absolute;
+                top: 16px;
+                left: 0;
+                background-color: $bg_c-black;
+                content: "";
+              }
+            }
+            .future_vision-desc {
+              font-size: $em-14px;
+              font-family: $font_family-MinchoB;
+              line-height: $lineHeight-s;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-// カード
+/* キャリアー ========================*/
 
-.card-ttl {
-  font-size: $em-22px;
-  font-family: $font_family-brand;
-  font-weight: bold;
-}
-.card-desc > p {
+section.section__career {
+  background: $bg_c-Base;
+  color: $color-black;
   font-family: $font_family-MinchoB;
-  font-size: $em-14px;
-  // font-weight: bold;
-  line-height: $lineHeight-s;
-  letter-spacing: $letterSpacing-s;
+  .section__lead {
+    font-size: $em-13px;
+    font-weight: 500;
+    line-height: $lineHeight-s;
+  }
+  .career_sub_ttl {
+    font-size: $em-20px;
+    line-height: $lineHeight-s;
+    font-weight: bold;
+    font-family: $font_family-MinchoB;
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 35px;
+    &::before {
+      display: block;
+      width: 24px;
+      height: 1px;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      background-color: $bg_c-black;
+      content: "";
+    }
+  }
+  div.career__accordion {
+    border-top: 1px $bg_c-Main solid;
+    border-collapse: collapse;
+    &:last-child {
+      border-bottom: 1px $bg_c-Main solid;
+    }
+    .career__accordion-ttl {
+      font-size: $em-16px;
+      font-weight: bold;
+      letter-spacing: $letterSpacing-s;
+      font-family: $font_family-MinchoB;
+    }
+
+    .career__content-ttl {
+      font-size: $em-14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-family: $font_family-MinchoB;
+    }
+    p.career__content-txt {
+      font-size: $em-14px;
+      line-height: $lineHeight-s;
+      font-family: $font_family-MinchoB;
+    }
+    .treatment-ttl {
+      font-size: $em-14px;
+      font-weight: bold;
+    }
+    .treatment-txt {
+      font-size: $em-14px;
+      line-height: $lineHeight-s;
+    }
+  }
+
+  @include mq-down() {
+    .career__accordion {
+      border-top: 1px $color-back solid;
+      border-collapse: collapse;
+      &:last-child {
+        border-bottom: 1px $color-back solid;
+      }
+      .career__accordion-ttl {
+        font-size: $em-16px;
+        font-weight: bold;
+        letter-spacing: $letterSpacing-s;
+        font-family: $font_family-MinchoB;
+      }
+      .career__content-unit {
+        .career__content-ttl {
+          font-size: $em-13px;
+          font-weight: 500;
+          margin-bottom: 4px;
+          letter-spacing: $letterSpacing-s;
+        }
+        .career__content-txt {
+          display: inline-block;
+          font-size: $em-13px;
+          line-height: $lineHeight-s;
+        }
+      }
+      .treatment-unit {
+        .treatment-ttl {
+          font-size: $em-13px;
+          font-weight: bold;
+          font-weight: 500;
+          letter-spacing: $letterSpacing-s;
+        }
+        .treatment-txt {
+          font-size: $em-13px;
+          line-height: $lineHeight-s;
+        }
+      }
+    }
+  }
 }
 
-/* ワークス ==========================*/
-section#top-works.section__pf {
-  color: $color-white;
+/* ポートフォリオ =========================*/
+.section__pf {
   background: $bg_c-Main;
+  color: $color-white;
   .info-wrapper-pc {
-    color: $bg_c-Base;
+    color: $color-black;
+    background: rgba(255, 255, 255, 0.9);
     .info-category {
-      color: $bg_c-Base;
     }
     .info-ttl {
-      color: $bg_c-Base;
     }
   }
 }
@@ -327,7 +599,7 @@ section#top-works.section__pf {
 .slider__btn-wrapper {
   color: #000;
   font-size: $em-14px;
-// font-style: italic;
+  // font-style: italic;
   letter-spacing: $letterSpacing-s;
 
   .”slick-next” {
@@ -339,12 +611,6 @@ section#top-works.section__pf {
     padding: 0 5px;
   }
 }
-
-// // スライダーボタン
-// .”slick-prev”,
-// .”slick-next” {
-//   font-weight: bold;
-// }
 
 /* スライダー ---------------------------*/
 .pagenation__btn-wrapper {
@@ -369,35 +635,9 @@ section#top-works.section__pf {
     }
   }
 }
-
 // スライダーの情報
 
-section#top-works {
-  color: $color-white;
-  div {
-    a {
-      color: $color-white;
-      &:link {
-        color: $color-white;
-      }
-    }
-  }
-}
-section#top-csr {
-  color: $color-black;
-  div {
-    a {
-      color: $color-black;
-      &:link {
-        color: $color-black;
-      }
-    }
-  }
-}
-
 .info-wrapper-pc {
-  color: $color-white;
-  background: rgba($color: $bg_c-black, $alpha: .9);
   .info-category {
     font-size: $em-22px;
     font-weight: bold;
@@ -425,8 +665,7 @@ section#top-csr {
 }
 
 // スライダーのカテゴリーの表示
-section#top-works div.info-wrapper-pc div a,
-section#top-csr div.info-wrapper-pc div a {
+.info-wrapper-pc div a {
   text-align: right;
   font-size: $em-22px;
   font-family: $font_family-brand;
@@ -435,10 +674,18 @@ section#top-csr div.info-wrapper-pc div a {
 
 /* ニュース ==========================*/
 .section__news {
-  background-color: $bg_c-Main;
-  color: $color-white;
-  &:link {
-    color: $color-white;
+  background-color: $bg_c-Base;
+  color: $color-black;
+  .top_news-link {
+    cursor: pointer;
+    transition: all 0.4s;
+    color: $color-black;
+    &:link {
+      color: $color-black;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
   }
   .news__item-date {
     font-family: $font_family-brand;
@@ -525,105 +772,9 @@ section.section__profile {
   }
 }
 
-/* リクルート ========================*/
-.section__lead {
-  font-size: $em-13px;
-  font-weight: 500;
-  line-height: $lineHeight-s;
-}
-
-section.section__career {
-  background-color: $bg_c-Main;
-  font-family: $font_family-MinchoB;
-  color: $color-white;
-  h3.career_sub_ttl {
-    font-size: $em-20px;
-    font-weight: bold;
-    font-family: $font_family-MinchoB;
-  }
-  div.career__accordion {
-    border-top: 1px $bg_c-Base solid;
-    border-collapse: collapse;
-    &:last-child {
-      border-bottom: 1px $bg_c-Base solid;
-    }
-    .career__accordion-ttl {
-      font-size: $em-16px;
-      font-weight: bold;
-      letter-spacing: $letterSpacing-s;
-      font-family: $font_family-MinchoB;
-    }
-
-    .career__content-ttl {
-      font-size: $em-14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      font-family: $font_family-MinchoB;
-    }
-    p.career__content-txt {
-      font-size: $em-14px;
-      line-height: $lineHeight-s;
-      font-family: $font_family-MinchoB;
-    }
-    .treatment-ttl {
-      font-size: $em-14px;
-      font-weight: bold;
-    }
-    .treatment-txt {
-      font-size: $em-14px;
-      line-height: $lineHeight-s;
-    }
-  }
-
-  @include mq-down() {
-    .career_sub_ttl {
-      font-size: $em-20px;
-      font-weight: bold;
-    }
-
-    .career__accordion {
-      border-top: 1px $color-back solid;
-      border-collapse: collapse;
-      &:last-child {
-        border-bottom: 1px $color-back solid;
-      }
-      .career__accordion-ttl {
-        font-size: $em-16px;
-        font-weight: bold;
-        letter-spacing: $letterSpacing-s;
-        font-family: $font_family-MinchoB;
-      }
-      .career__content-unit {
-        .career__content-ttl {
-          font-size: $em-13px;
-          font-weight: 500;
-          margin-bottom: 4px;
-          letter-spacing: $letterSpacing-s;
-        }
-        .career__content-txt {
-          display: inline-block;
-          font-size: $em-13px;
-          line-height: $lineHeight-s;
-        }
-      }
-      .treatment-unit {
-        .treatment-ttl {
-          font-size: $em-13px;
-          font-weight: bold;
-          font-weight: 500;
-          letter-spacing: $letterSpacing-s;
-        }
-        .treatment-txt {
-          font-size: $em-13px;
-          line-height: $lineHeight-s;
-        }
-      }
-    }
-  }
-}
-
 /* コンタクト ========================*/
 .section__skills {
+  background-color: white;
   .section__ttl {
   }
   .section__lead {
@@ -692,8 +843,9 @@ img#footer__logo {
 /* 投稿ページ用  */
 .entry-category-parent {
   font-size: 40px;
-  font-weight: bold;
-  font-family: "DIN Condensed", sans-serif;
+
+  font-family: $font_family-brand;
+
   margin-bottom: 28px;
   @include mq-down() {
     font-size: 40px;
@@ -835,45 +987,24 @@ img.attachment-large.size-large.wp-post-image {
   width: 100%;
   height: auto;
 }
-/* WORKS投稿記事用 ==========================*/
-.entry-category-child {
-  font-family: $font_family-brand;
-  font-size: 40px;
-  font-weight: bold;
-  @include mq-down() {
-  }
-}
-h1.entry-ttl {
+/* 実績投稿記事用 ==========================*/
+.entry-ttl {
   font-family: $font_family-MinchoB;
-  font-size: $em-16px;
-  font-weight: bold;
+  font-size: $em-32px;
+
   @include mq-down() {
   }
 }
-p.launch-date {
-  font-size: $em-14px;
-  font-weight: bold;
-  font-family: $font_family-brand;
+.pf-table {
+  td{
+    font-size: $em-16px;
+    font-family: $font_family-MinchoB;
+  }
   @include mq-down() {
     font-size: $em-14px;
   }
 }
-.external-link {
-  text-align: right;
-  font-weight: bold;
-  font-size: $em-15px;
-  font-family: $font_family-brand;
-  a {
-    text-align: right;
-    font-weight: bold;
-    font-size: $em-15px;
-    font-family: $font_family-brand;
-    color: $color-black;
-    &:link {
-      color: $color-black;
-    }
-  }
-}
+
 
 /* コンタクトフォームページ用 --------------------*/
 label.input__unit-label {
